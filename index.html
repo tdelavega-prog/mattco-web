@@ -25,17 +25,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta:hover{background:var(--verde-claro)!important;}
 
 /* HERO */
-#inicio{height:100vh;min-height:620px;position:relative;display:flex;align-items:flex-end;padding:0 3rem 5rem;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#2a3320 0%,#3d4a2e 40%,#5a6845 70%,#8c9070 100%);}
-.hero-img{position:absolute;inset:0;background-image:url('images/hero-mesada.jpg');background-size:cover;background-position:center;opacity:0.45;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,24,0.88) 0%,rgba(26,26,24,0.15) 55%,transparent 100%);}
-.hero-content{position:relative;z-index:2;max-width:680px;}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;line-height:1.15;color:var(--crema);margin-bottom:1.8rem;}
-.hero-title em{font-style:italic;color:rgba(245,244,240,0.75);}
-.hero-rule{width:2.5rem;height:1px;background:rgba(245,244,240,0.3);margin-bottom:1.4rem;}
-.hero-whatwedo{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,244,240,0.45);margin-bottom:0.7rem;}
-.hero-sub{font-size:0.88rem;color:rgba(245,244,240,0.65);line-height:1.8;max-width:540px;margin-bottom:2.5rem;}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+#inicio{height:100vh;min-height:620px;position:relative;display:flex;align-items:center;justify-content:center;padding:0 3rem;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:#1a1a18;}
+.hero-img{position:absolute;inset:0;background-image:url('images/hero-mesada.jpg');background-size:cover;background-position:center;opacity:0.75;}
+.hero-overlay{position:absolute;inset:0;background:rgba(20,20,18,0.38);}
+.hero-content{position:relative;z-index:2;max-width:600px;text-align:center;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.2vw,2.8rem);font-weight:300;line-height:1.2;color:var(--crema);margin-bottom:1.4rem;}
+.hero-title em{font-style:italic;color:rgba(245,244,240,0.8);}
+.hero-rule{width:2rem;height:1px;background:rgba(245,244,240,0.3);margin:0 auto 1.2rem;}
+.hero-whatwedo{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,244,240,0.4);margin-bottom:0.6rem;}
+.hero-sub{font-size:0.82rem;color:rgba(245,244,240,0.6);line-height:1.8;max-width:480px;margin:0 auto 2rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
 .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--crema);color:var(--negro);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
 .btn-primary:hover{background:white;}
 .btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(245,244,240,0.35);color:var(--crema);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
@@ -60,12 +60,10 @@ section{padding:6rem 3rem;}
 .marm-feature-text h4{font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.3rem;}
 .marm-feature-text p{font-size:0.85rem;color:var(--gris);line-height:1.6;}
 
-.marm-btns-label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gris);margin-bottom:0.8rem;}
-.marm-btns{display:flex;flex-direction:column;gap:0;}
-.btn-material{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border:1px solid rgba(61,74,46,0.18);border-top:none;text-decoration:none;color:var(--negro);font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.2s;}
-.marm-btns .btn-material:first-child{border-top:1px solid rgba(61,74,46,0.18);}
-.btn-material:hover{background:var(--verde);color:var(--crema);border-color:var(--verde);}
-.btn-material::after{content:'→';font-size:0.9rem;}
+.marm-btns{display:flex;flex-direction:column;gap:0;margin-top:0;}
+.btn-material{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(61,74,46,0.1);text-decoration:none;color:var(--negro);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;}
+.btn-material:hover{color:var(--verde);padding-left:0.3rem;}
+.btn-material::after{content:'→';font-size:0.9rem;opacity:0.5;}
 
 /* OBRAS CTA */
 #obras-cta{background:var(--negro);text-align:center;padding:5rem 3rem;}
@@ -75,12 +73,6 @@ section{padding:6rem 3rem;}
 .btn-outline-light{display:inline-flex;align-items:center;gap:0.6rem;border:1px solid rgba(245,244,240,0.35);color:var(--crema);text-decoration:none;padding:0.9rem 2.2rem;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
 .btn-outline-light:hover{border-color:var(--crema);background:rgba(245,244,240,0.06);}
 
-/* TICKER */
-.marcas-ticker{background:var(--verde);padding:1.1rem 0;overflow:hidden;white-space:nowrap;}
-.marcas-track{display:inline-flex;gap:2.5rem;animation:ticker 35s linear infinite;}
-.marcas-track span{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.1em;color:rgba(245,244,240,0.65);}
-.marcas-track .dot{color:rgba(245,244,240,0.25);font-size:0.45rem;align-self:center;}
-@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* OTROS MATERIALES */
 #otros{background:var(--blanco);}
@@ -196,7 +188,6 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
             </div>
           </div>
         </div>
-        <p class="marm-btns-label">Explorá los materiales disponibles</p>
         <div class="marm-btns">
           <a href="materiales/purastone.html" class="btn-material">Purastone</a>
           <a href="materiales/purastone-prima.html" class="btn-material">Purastone Prima</a>
@@ -214,12 +205,6 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   <a href="obras.html" class="btn-outline-light">Conocé algunas de nuestras obras →</a>
 </section>
 
-<div class="marcas-ticker">
-  <div class="marcas-track">
-    <span>De Stefano 1913</span><span class="dot">·</span><span>Purastone</span><span class="dot">·</span><span>Neolith</span><span class="dot">·</span><span>Duravit</span><span class="dot">·</span><span>Piazza</span><span class="dot">·</span><span>Tauro</span><span class="dot">·</span><span>TOTO</span><span class="dot">·</span><span>Hydros</span><span class="dot">·</span><span>Ferroli</span><span class="dot">·</span><span>Asua</span><span class="dot">·</span><span>Immergas</span><span class="dot">·</span><span>Rheem</span><span class="dot">·</span><span>Gree</span><span class="dot">·</span><span>Fedders</span><span class="dot">·</span><span>Clever</span><span class="dot">·</span><span>BeGo Studio</span><span class="dot">·</span><span>Pitt Cooking</span><span class="dot">·</span><span>Johnson Acero</span><span class="dot">·</span><span>VITE</span><span class="dot">·</span><span>Atlas Concorde</span><span class="dot">·</span><span>Navarti</span><span class="dot">·</span><span>Piu Cerámicas</span><span class="dot">·</span><span>Oblak</span><span class="dot">·</span><span>Gromanti</span><span class="dot">·</span><span>Augen</span><span class="dot">·</span><span>Lucciola</span><span class="dot">·</span><span>Grupo Vonderk</span><span class="dot">·</span><span>LedsC4</span><span class="dot">·</span>
-    <span>De Stefano 1913</span><span class="dot">·</span><span>Purastone</span><span class="dot">·</span><span>Neolith</span><span class="dot">·</span><span>Duravit</span><span class="dot">·</span><span>Piazza</span><span class="dot">·</span><span>Tauro</span><span class="dot">·</span><span>TOTO</span><span class="dot">·</span><span>Hydros</span><span class="dot">·</span><span>Ferroli</span><span class="dot">·</span><span>Asua</span><span class="dot">·</span><span>Immergas</span><span class="dot">·</span><span>Rheem</span><span class="dot">·</span><span>Gree</span><span class="dot">·</span><span>Fedders</span><span class="dot">·</span><span>Clever</span><span class="dot">·</span><span>BeGo Studio</span><span class="dot">·</span><span>Pitt Cooking</span><span class="dot">·</span><span>Johnson Acero</span><span class="dot">·</span><span>VITE</span><span class="dot">·</span><span>Atlas Concorde</span><span class="dot">·</span><span>Navarti</span><span class="dot">·</span><span>Piu Cerámicas</span><span class="dot">·</span><span>Oblak</span><span class="dot">·</span><span>Gromanti</span><span class="dot">·</span><span>Augen</span><span class="dot">·</span><span>Lucciola</span><span class="dot">·</span><span>Grupo Vonderk</span><span class="dot">·</span><span>LedsC4</span><span class="dot">·</span>
-  </div>
-</div>
 
 <section id="otros">
   <div style="max-width:1200px;margin:0 auto;">
