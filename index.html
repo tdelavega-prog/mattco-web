@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATTCO — Materiales & Terminaciones de Obra</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%233D4A2E'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='22' font-weight='300' fill='%23F5F2EC' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="description" content="Materiales y terminaciones de obra para arquitectos y desarrolladores. Marmolería, baldosas, sanitarios, climatización, iluminación y más. Todo el país.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#3D4A2E;--verde-claro:#6B7A52;--crema:#F5F2EC;--crema-oscuro:#EAE5DA;--gris:#8C8C84;--negro:#1A1A18;--blanco:#FDFCF9;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--blanco);color:var(--negro);overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(253,252,249,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(61,74,46,0.08);}
+.nav-logo span{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;letter-spacing:0.2em;color:var(--verde);}
+.nav-links{display:flex;gap:2.5rem;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--negro);font-size:0.78rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--verde);}
+.nav-cta{background:var(--verde)!important;color:var(--blanco)!important;padding:0.55rem 1.4rem;border-radius:2px;font-size:0.75rem!important;letter-spacing:0.1em!important;}
+.nav-cta:hover{background:var(--verde-claro)!important;}
+
+#inicio{height:100vh;min-height:600px;position:relative;display:flex;align-items:flex-end;padding:0 3rem 5rem;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#2a3320 0%,#3d4a2e 40%,#5a6845 70%,#8c9070 100%);}
+.hero-img{position:absolute;inset:0;background-image:url('images/hero-bg.jpg');background-size:cover;background-position:center;opacity:0.4;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,24,0.85) 0%,rgba(26,26,24,0.1) 60%,transparent 100%);}
+.hero-content{position:relative;z-index:2;max-width:700px;}
+.hero-tag{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,242,236,0.55);margin-bottom:1.2rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:1.1;color:var(--crema);margin-bottom:1.2rem;}
+.hero-title em{font-style:italic;color:rgba(245,242,236,0.7);}
+.hero-sub{font-size:0.85rem;color:rgba(245,242,236,0.6);letter-spacing:0.04em;line-height:1.7;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--crema);color:var(--negro);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
+.btn-primary:hover{background:white;}
+.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(245,242,236,0.4);color:var(--crema);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
+.btn-secondary:hover{border-color:rgba(245,242,236,0.8);}
+
+section{padding:6rem 3rem;}
+.section-label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--verde);margin-bottom:1rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.2;color:var(--negro);margin-bottom:1.5rem;}
+.section-sub{font-size:0.9rem;color:var(--gris);line-height:1.8;max-width:520px;}
+
+#marmoleria{background:var(--crema);}
+.marm-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;}
+.marm-image{position:relative;height:520px;overflow:hidden;border-radius:2px;}
+.marm-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.marm-image:hover img{transform:scale(1.03);}
+.marm-features{display:flex;flex-direction:column;gap:1.5rem;margin:2.5rem 0;}
+.marm-feature{display:flex;gap:1.2rem;align-items:flex-start;padding-bottom:1.5rem;border-bottom:1px solid rgba(61,74,46,0.12);}
+.marm-feature:last-child{border-bottom:none;padding-bottom:0;}
+.marm-feature-num{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--verde-claro);min-width:2rem;margin-top:2px;}
+.marm-feature-text h4{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.3rem;}
+.marm-feature-text p{font-size:0.85rem;color:var(--gris);line-height:1.6;}
+.marm-cta-block{background:var(--verde);padding:2rem 2.2rem;border-radius:2px;margin-top:2rem;}
+.marm-cta-block p{font-size:0.88rem;color:rgba(245,242,236,0.8);line-height:1.7;margin-bottom:1.2rem;}
+.btn-light{display:inline-flex;align-items:center;gap:0.5rem;background:var(--crema);color:var(--negro);text-decoration:none;padding:0.7rem 1.6rem;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
+.btn-light:hover{background:white;}
+
+/* LOGO GRID — para marcas */
+.logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0;margin-top:1.5rem;}
+.logo-item{display:flex;align-items:center;justify-content:center;padding:1.4rem 1rem;background:transparent;border:1px solid rgba(245,242,236,0.07);min-height:72px;transition:all 0.25s;}
+.logo-item:hover{background:rgba(245,242,236,0.06);border-color:rgba(245,242,236,0.18);}
+.logo-item span{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:400;letter-spacing:0.1em;color:rgba(245,242,236,0.55);text-align:center;line-height:1.35;transition:all 0.25s;text-transform:uppercase;}
+.logo-item:hover span{color:rgba(245,242,236,0.95);letter-spacing:0.14em;}
+.logo-grid-dark .logo-item{border-color:rgba(245,242,236,0.07);}
+
+
+/* MARM PARTNER LOGOS */
+.marm-partner-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:1.5rem;border:1px solid rgba(61,74,46,0.1);}
+.marm-partner-logo{display:flex;align-items:center;justify-content:center;padding:1rem 0.5rem;background:var(--blanco);border:1px solid rgba(61,74,46,0.08);min-height:64px;}
+.marm-partner-logo span{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--verde);text-align:center;line-height:1.4;}
+
+#obras{background:var(--blanco);}
+.obras-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;}
+
+/* CARRUSEL HORIZONTAL DE OBRAS */
+.obras-carousel-wrap{position:relative;margin:0 -3rem;padding:0 3rem;}
+.obras-carousel{display:flex;gap:1.2rem;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:0.5rem;}
+.obras-carousel::-webkit-scrollbar{display:none;}
+
+/* Flechas del carrusel principal */
+.obras-nav{position:absolute;top:50%;transform:translateY(-70%);z-index:10;background:rgba(253,252,249,0.92);border:1px solid rgba(61,74,46,0.12);color:var(--negro);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;transition:all 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.obras-nav:hover{background:var(--verde);color:var(--crema);border-color:var(--verde);}
+.obras-nav svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.obras-nav.prev{left:1rem;}
+.obras-nav.next{right:1rem;}
+
+/* OBRA CARD — carrusel horizontal */
+.obra-card{flex:0 0 340px;cursor:pointer;transition:opacity 0.2s;}
+.obra-card:hover{opacity:0.88;}
+.obra-card-img{position:relative;width:100%;height:420px;overflow:hidden;background:var(--crema-oscuro);border-radius:2px;}
+.obra-card-img img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;background:var(--crema-oscuro);}
+.obra-foto-count{position:absolute;top:0.7rem;right:0.7rem;z-index:2;background:rgba(26,26,24,0.5);backdrop-filter:blur(4px);color:rgba(245,242,236,0.85);font-size:0.6rem;letter-spacing:0.1em;padding:0.2rem 0.5rem;border-radius:1px;}
+.obra-card-info{padding:0.9rem 0.2rem 0;}
+.obra-nombre{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:var(--negro);line-height:1.25;}
+.obra-tipo{font-size:0.72rem;color:var(--gris);margin-top:0.25rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.lightbox.active{opacity:1;pointer-events:all;}
+.lb-backdrop{position:absolute;inset:0;background:rgba(10,10,9,0.94);backdrop-filter:blur(8px);}
+.lb-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:2rem;}
+.lb-img-wrap{position:relative;max-width:min(90vw,1100px);max-height:85vh;display:flex;align-items:center;justify-content:center;}
+.lb-img-wrap img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:1px;display:block;transition:opacity 0.25s;}
+.lb-img-wrap img.fading{opacity:0;}
+.lb-close{position:fixed;top:1.5rem;right:1.5rem;background:none;border:none;color:rgba(245,242,236,0.6);cursor:pointer;font-size:1.8rem;line-height:1;padding:0.5rem;transition:color 0.2s;z-index:2;}
+.lb-close:hover{color:var(--crema);}
+.lb-arrow{position:fixed;top:50%;transform:translateY(-50%);background:rgba(245,242,236,0.08);border:1px solid rgba(245,242,236,0.12);color:var(--crema);width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:1px;transition:background 0.2s;z-index:2;}
+.lb-arrow:hover{background:rgba(245,242,236,0.18);}
+.lb-arrow.prev{left:1.5rem;}
+.lb-arrow.next{right:1.5rem;}
+.lb-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.lb-info{position:fixed;bottom:0;left:0;right:0;padding:1.5rem 2rem;background:linear-gradient(to top,rgba(10,10,9,0.8) 0%,transparent 100%);text-align:center;z-index:2;}
+.lb-nombre{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--crema);letter-spacing:0.06em;}
+.lb-tipo{font-size:0.72rem;color:rgba(245,242,236,0.45);margin-top:0.2rem;letter-spacing:0.1em;}
+.lb-counter{font-size:0.65rem;color:rgba(245,242,236,0.35);letter-spacing:0.14em;margin-top:0.5rem;text-transform:uppercase;}
+.lb-dots{display:flex;justify-content:center;gap:6px;margin-top:0.8rem;}
+.lb-dot{width:6px;height:6px;border-radius:50%;background:rgba(245,242,236,0.25);border:none;cursor:pointer;padding:0;transition:background 0.2s,transform 0.2s;}
+.lb-dot.active{background:var(--crema);transform:scale(1.3);}
+
+.marcas-ticker{background:var(--verde);padding:1.1rem 0;overflow:hidden;white-space:nowrap;}
+.marcas-track{display:inline-flex;gap:2.5rem;animation:ticker 35s linear infinite;}
+.marcas-track span{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:0.1em;color:rgba(245,242,236,0.7);}
+.marcas-track .dot{color:rgba(245,242,236,0.3);font-size:0.45rem;align-self:center;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+.clientes-ticker{background:var(--blanco);padding:0;overflow:hidden;white-space:nowrap;}
+.clientes-ticker-label{background:var(--verde);text-align:center;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,242,236,0.6);padding:0.7rem 0;margin:0;}
+.clientes-track{display:inline-flex;gap:3rem;animation:ticker-reverse 40s linear infinite;padding:1.4rem 0;}
+.clientes-track span{font-family:'Cormorant Garamond',serif;font-size:0.92rem;font-weight:400;letter-spacing:0.12em;color:var(--verde);text-transform:uppercase;}
+.clientes-track .dot{color:rgba(61,74,46,0.25);font-size:0.45rem;align-self:center;}
+@keyframes ticker-reverse{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+
+#otros{background:var(--negro);}
+#otros .section-label{color:rgba(245,242,236,0.35);}
+#otros .section-title{color:var(--crema);}
+#otros .section-sub{color:rgba(245,242,236,0.4);}
+.rubros-list{display:flex;flex-direction:column;gap:0;margin-top:3.5rem;}
+.rubro-block{border-top:1px solid rgba(245,242,236,0.08);padding:2.5rem 0;}
+.rubro-block:last-child{border-bottom:1px solid rgba(245,242,236,0.08);}
+.rubro-header{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;align-items:baseline;margin-bottom:1.5rem;}
+.rubro-num-big{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--verde-claro);}
+.rubro-title-row{display:flex;align-items:baseline;gap:2rem;flex-wrap:wrap;}
+.rubro-nombre-big{font-size:0.88rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--crema);}
+.rubro-desc-inline{font-size:0.8rem;color:rgba(245,242,236,0.35);line-height:1.5;}
+
+#contacto{background:var(--crema);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;}
+.contacto-img{position:relative;min-height:500px;overflow:hidden;}
+.contacto-img img{width:100%;height:100%;object-fit:cover;}
+.contacto-overlay{position:absolute;inset:0;background:rgba(61,74,46,0.25);}
+.contacto-content{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
+.contacto-personas{display:flex;flex-direction:column;gap:1.8rem;margin:2.5rem 0;}
+.contacto-nombre{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:0.4rem;}
+.contacto-dato{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--gris);line-height:1.9;text-decoration:none;transition:color 0.2s;}
+.contacto-dato:hover{color:var(--verde);}
+.btn-verde{display:inline-flex;align-items:center;gap:0.6rem;background:var(--verde);color:var(--crema);text-decoration:none;padding:0.9rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;}
+.btn-verde:hover{background:var(--verde-claro);}
+
+footer{background:var(--negro);color:rgba(245,242,236,0.25);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:0.2em;color:rgba(245,242,236,0.5);}
+footer p{font-size:0.72rem;letter-spacing:0.04em;}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:0.72rem;color:rgba(245,242,236,0.25);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(245,242,236,0.6);}
+
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.3);text-decoration:none;transition:transform 0.2s;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:26px;height:26px;fill:white;}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  section{padding:4rem 1.5rem;}
+  #inicio{padding:0 1.5rem 3.5rem;}
+  .marm-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .marm-image{height:300px;}
+  .marm-partner-logos{grid-template-columns:repeat(2,1fr);}
+  .obras-carousel-wrap{margin:0 -1.5rem;padding:0 1.5rem;}
+  .obra-card{flex:0 0 280px;}
+  .obra-card-img{height:340px;}
+  .obras-nav{display:none;}
+  #contacto{grid-template-columns:1fr;}
+  .contacto-img{min-height:260px;}
+  .contacto-content{padding:3rem 1.5rem;}
+  footer{flex-direction:column;gap:1rem;text-align:center;}
+  .obras-header{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .rubro-header{grid-template-columns:2rem 1fr;gap:1rem;}
+}
+@media(max-width:600px){
+  .obra-card{flex:0 0 260px;}
+  .obra-card-img{height:300px;}
+  .logo-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><span>MATTCO</span></div>
+  <div class="nav-links">
+    <a href="#marmoleria">Marmolería</a>
+    <a href="#obras">Obras</a>
+    <a href="#otros">Materiales</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" class="nav-cta">Solicitar cotización</a>
+  </div>
+</nav>
+
+<section id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Argentina · Uruguay · Todo el país</p>
+    <h1 class="hero-title">Materiales y terminaciones<br><em>de obra.</em></h1>
+    <p class="hero-sub">Para arquitectos y desarrolladores.<br>Marmolería · Baldosas · Sanitarios · Climatización · Iluminación · Aberturas</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" class="btn-primary">Solicitar cotización</a>
+      <a href="#obras" class="btn-secondary">Ver obras realizadas</a>
+    </div>
+  </div>
+</section>
+
+<section id="marmoleria">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">01 — Marmolería</p>
+    <div class="marm-grid">
+      <div class="marm-image">
+        <img src="images/marmoleria.jpg" alt="Marmolería Mattco">
+      </div>
+      <div>
+        <h2 class="section-title">Piedra natural y superficies de ingeniería</h2>
+        <p class="section-sub">Trabajamos con las mejores materias primas del mercado, con el respaldo y trayectoria de más de 100 años de De Stefano 1913.</p>
+        <div class="marm-features">
+          <div class="marm-feature">
+            <span class="marm-feature-num">01</span>
+            <div class="marm-feature-text">
+              <h4>Replanteo y medición</h4>
+              <p>Visita técnica sin cargo para toma de medidas y asesoramiento en obra.</p>
+            </div>
+          </div>
+          <div class="marm-feature">
+            <span class="marm-feature-num">02</span>
+            <div class="marm-feature-text">
+              <h4>Cortes a medida</h4>
+              <p>Mesadas, parrillas, cocinas, baños y piezas especiales con acabado perfecto.</p>
+            </div>
+          </div>
+          <div class="marm-feature">
+            <span class="marm-feature-num">03</span>
+            <div class="marm-feature-text">
+              <h4>Entrega y colocación</h4>
+              <p>Coordinamos logística y puesta en obra. Envíos a todo el país y Uruguay.</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris);margin-bottom:0.8rem;">Trabajamos con</p>
+        <div class="marm-partner-logos">
+          <div class="marm-partner-logo"><span>De Stefano<br>1913</span></div>
+          <div class="marm-partner-logo"><span>Pura<br>Stone</span></div>
+          <div class="marm-partner-logo"><span>Purastone<br>Prima</span></div>
+          <div class="marm-partner-logo"><span>Neo<br>Lith</span></div>
+        </div>
+        <div class="marm-cta-block" style="margin-top:1.5rem;">
+          <p>Contamos con acceso a todo el catálogo de De Stefano 1913 — más de 100 tipos de piedras naturales y superficies de ingeniería. Consultanos y te asesoramos sin cargo.</p>
+          <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20consultar%20sobre%20piedras%20y%20m%C3%A1rmoles%20para%20mi%20obra" class="btn-light">Consultar catálogo por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="clientes-ticker">
+  <p class="clientes-ticker-label">Confían en nosotros</p>
+  <div class="clientes-track">
+    <span>Gewin Real Estate</span><span class="dot">·</span><span>Aldeana Pilar</span><span class="dot">·</span><span>CBI Real Estate</span><span class="dot">·</span><span>La Clementina Desarrollos</span><span class="dot">·</span><span>We Surf Desarrollos</span><span class="dot">·</span><span>Grupo Ampo</span><span class="dot">·</span><span>Deniard Constructora</span><span class="dot">·</span><span>Negroni</span><span class="dot">·</span><span>Cafecito</span><span class="dot">·</span><span>Bowas Desarrollos</span><span class="dot">·</span><span>Feel Deco</span><span class="dot">·</span><span>Infinita Arq.</span><span class="dot">·</span>
+    <span>Gewin Real Estate</span><span class="dot">·</span><span>Aldeana Pilar</span><span class="dot">·</span><span>CBI Real Estate</span><span class="dot">·</span><span>La Clementina Desarrollos</span><span class="dot">·</span><span>We Surf Desarrollos</span><span class="dot">·</span><span>Grupo Ampo</span><span class="dot">·</span><span>Deniard Constructora</span><span class="dot">·</span><span>Negroni</span><span class="dot">·</span><span>Cafecito</span><span class="dot">·</span><span>Bowas Desarrollos</span><span class="dot">·</span><span>Feel Deco</span><span class="dot">·</span><span>Infinita Arq.</span><span class="dot">·</span>
+  </div>
+</div>
+
+<section id="obras">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="obras-header">
+      <div>
+        <p class="section-label">02 — Obras realizadas</p>
+        <h2 class="section-title">Proyectos que hablan<br>por nosotros</h2>
+      </div>
+      <p style="font-size:0.82rem;color:var(--gris);max-width:260px;text-align:right;line-height:1.7;">Cada obra es el resultado del trabajo entre nuestros asesores, proveedores y el cliente.</p>
+    </div>
+    <div class="obras-carousel-wrap">
+      <button class="obras-nav prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="obras-nav next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <div class="obras-carousel" id="obras-carousel">
+        <!-- Cards generadas por JS desde OBRAS[] -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marcas-ticker">
+  <div class="marcas-track">
+    <span>De Stefano 1913</span><span class="dot">·</span><span>Purastone</span><span class="dot">·</span><span>Neolith</span><span class="dot">·</span><span>Duravit</span><span class="dot">·</span><span>Piazza</span><span class="dot">·</span><span>Tauro</span><span class="dot">·</span><span>TOTO</span><span class="dot">·</span><span>Hydros</span><span class="dot">·</span><span>Ferroli</span><span class="dot">·</span><span>Asua</span><span class="dot">·</span><span>Immergas</span><span class="dot">·</span><span>Rheem</span><span class="dot">·</span><span>Gree</span><span class="dot">·</span><span>Fedders</span><span class="dot">·</span><span>Clever</span><span class="dot">·</span><span>BeGo Studio</span><span class="dot">·</span><span>Pitt Cooking</span><span class="dot">·</span><span>Johnson Acero</span><span class="dot">·</span><span>VITE</span><span class="dot">·</span><span>Atlas Concorde</span><span class="dot">·</span><span>Navarti</span><span class="dot">·</span><span>Piu Cerámicas</span><span class="dot">·</span><span>Oblak</span><span class="dot">·</span><span>Gromanti</span><span class="dot">·</span><span>Augen</span><span class="dot">·</span><span>Lucciola</span><span class="dot">·</span><span>Grupo Vonderk</span><span class="dot">·</span><span>LedsC4</span><span class="dot">·</span>
+    <span>De Stefano 1913</span><span class="dot">·</span><span>Purastone</span><span class="dot">·</span><span>Neolith</span><span class="dot">·</span><span>Duravit</span><span class="dot">·</span><span>Piazza</span><span class="dot">·</span><span>Tauro</span><span class="dot">·</span><span>TOTO</span><span class="dot">·</span><span>Hydros</span><span class="dot">·</span><span>Ferroli</span><span class="dot">·</span><span>Asua</span><span class="dot">·</span><span>Immergas</span><span class="dot">·</span><span>Rheem</span><span class="dot">·</span><span>Gree</span><span class="dot">·</span><span>Fedders</span><span class="dot">·</span><span>Clever</span><span class="dot">·</span><span>BeGo Studio</span><span class="dot">·</span><span>Pitt Cooking</span><span class="dot">·</span><span>Johnson Acero</span><span class="dot">·</span><span>VITE</span><span class="dot">·</span><span>Atlas Concorde</span><span class="dot">·</span><span>Navarti</span><span class="dot">·</span><span>Piu Cerámicas</span><span class="dot">·</span><span>Oblak</span><span class="dot">·</span><span>Gromanti</span><span class="dot">·</span><span>Augen</span><span class="dot">·</span><span>Lucciola</span><span class="dot">·</span><span>Grupo Vonderk</span><span class="dot">·</span><span>LedsC4</span><span class="dot">·</span>
+  </div>
+</div>
+
+<section id="otros">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">03 — Otros materiales</p>
+    <h2 class="section-title">Todo lo que tu obra<br>necesita</h2>
+    <p class="section-sub">Una línea completa de materiales y terminaciones. Consultanos por cualquier rubro — enviamos a todo el país.</p>
+
+    <div class="rubros-list">
+
+      <div class="rubro-block">
+        <div class="rubro-header">
+          <span class="rubro-num-big">03.1</span>
+          <div class="rubro-title-row">
+            <span class="rubro-nombre-big">Baldosas y pisos</span>
+            <span class="rubro-desc-inline">Porcelanato, mármol, travertino, granito, sinterizado y terrazzo. Nacionales e importados.</span>
+          </div>
+        </div>
+        <div class="logo-grid logo-grid-dark">
+          <div class="logo-item"><span>De Stefano<br>1913</span></div>
+          <div class="logo-item"><span>VITE</span></div>
+          <div class="logo-item"><span>Atlas<br>Concorde</span></div>
+          <div class="logo-item"><span>Navarti<br>Cerámica</span></div>
+          <div class="logo-item"><span>Quadri</span></div>
+          <div class="logo-item"><span>Piu<br>Cerámicas</span></div>
+        </div>
+      </div>
+
+      <div class="rubro-block">
+        <div class="rubro-header">
+          <span class="rubro-num-big">03.2</span>
+          <div class="rubro-title-row">
+            <span class="rubro-nombre-big">Cocinas y anafes</span>
+            <span class="rubro-desc-inline">Muebles a medida, bachas de acero, hornos eléctricos y anafes europeos integrados.</span>
+          </div>
+        </div>
+        <div class="logo-grid logo-grid-dark">
+          <div class="logo-item"><span>Clever</span></div>
+          <div class="logo-item"><span>BeGo<br>Studio</span></div>
+          <div class="logo-item"><span>Pitt<br>Cooking</span></div>
+          <div class="logo-item"><span>Johnson<br>Acero</span></div>
+        </div>
+      </div>
+
+      <div class="rubro-block">
+        <div class="rubro-header">
+          <span class="rubro-num-big">03.3</span>
+          <div class="rubro-title-row">
+            <span class="rubro-nombre-big">Sanitarios y griferías</span>
+            <span class="rubro-desc-inline">Tecnología, eficiencia del agua y diseño. Marcas líderes para baño y cocina.</span>
+          </div>
+        </div>
+        <div class="logo-grid logo-grid-dark">
+          <div class="logo-item"><span>Duravit</span></div>
+          <div class="logo-item"><span>Piazza</span></div>
+          <div class="logo-item"><span>Tauro</span></div>
+          <div class="logo-item"><span>TOTO</span></div>
+          <div class="logo-item"><span>Hydros</span></div>
+        </div>
+      </div>
+
+      <div class="rubro-block">
+        <div class="rubro-header">
+          <span class="rubro-num-big">03.4</span>
+          <div class="rubro-title-row">
+            <span class="rubro-nombre-big">Climatización</span>
+            <span class="rubro-desc-inline">Calderas, pisos radiantes, bombas de calor, multisplit y sistemas sustentables. Con instalación.</span>
+          </div>
+        </div>
+        <div class="logo-grid logo-grid-dark">
+          <div class="logo-item"><span>Ferroli</span></div>
+          <div class="logo-item"><span>Asua</span></div>
+          <div class="logo-item"><span>Immergas</span></div>
+          <div class="logo-item"><span>Rheem</span></div>
+          <div class="logo-item"><span>Gree</span></div>
+          <div class="logo-item"><span>Fedders</span></div>
+        </div>
+      </div>
+
+      <div class="rubro-block">
+        <div class="rubro-header">
+          <span class="rubro-num-big">03.5</span>
+          <div class="rubro-title-row">
+            <span class="rubro-nombre-big">Iluminación</span>
+            <span class="rubro-desc-inline">LED, decorativa, exterior y emergencia. Soluciones lumínicas a medida.</span>
+          </div>
+        </div>
+        <div class="logo-grid logo-grid-dark">
+          <div class="logo-item"><span>Grupo<br>Vonderk</span></div>
+          <div class="logo-item"><span>Idea Luz</span></div>
+          <div class="logo-item"><span>Lucciola</span></div>
+          <div class="logo-item"><span>LedsC4</span></div>
+        </div>
+      </div>
+
+      <div class="rubro-block">
+        <div class="rubro-header">
+          <span class="rubro-num-big">03.6</span>
+          <div class="rubro-title-row">
+            <span class="rubro-nombre-big">Aberturas y ventanas</span>
+            <span class="rubro-desc-inline">Aluminio y PVC de alta prestación. Puertas de placa, chapa y puertas ignífugas certificadas.</span>
+          </div>
+        </div>
+        <div class="logo-grid logo-grid-dark">
+          <div class="logo-item"><span>Oblak</span></div>
+          <div class="logo-item"><span>Gromanti</span></div>
+          <div class="logo-item"><span>Mesquita<br>Hermanos</span></div>
+          <div class="logo-item"><span>Augen</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20cotizar%20materiales%20para%20mi%20obra" class="btn-light" style="display:inline-flex;">Consultar cualquier rubro por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" style="padding:0;">
+  <div class="contacto-img">
+    <img src="images/contacto-bg.jpg" alt="MATTCO">
+    <div class="contacto-overlay"></div>
+  </div>
+  <div class="contacto-content">
+    <p class="section-label">04 — Contacto</p>
+    <h2 class="section-title">Consultanos<br>sin compromiso</h2>
+    <p class="section-sub">Asesoramos tu proyecto de forma personalizada. Presupuestos a medida, envíos a todo el país y Uruguay.</p>
+    <div class="contacto-personas">
+      <div>
+        <p class="contacto-nombre">Felipe de la Vega</p>
+        <a href="https://wa.me/5491178250837" class="contacto-dato">+54 9 11 7825-0837</a>
+        <a href="mailto:felipe@mattco.com.ar" class="contacto-dato">felipe@mattco.com.ar</a>
+      </div>
+      <div>
+        <p class="contacto-nombre">Tomás Cubelli</p>
+        <a href="https://wa.me/5491124509299" class="contacto-dato">+54 9 11 2450-9299</a>
+        <a href="mailto:tcubelli@mattco.com.ar" class="contacto-dato">tcubelli@mattco.com.ar</a>
+      </div>
+    </div>
+    <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20mi%20obra" class="btn-verde">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Solicitar cotización
+    </a>
+    <p style="font-size:0.75rem;color:var(--gris);margin-top:2rem;line-height:1.8;">
+      Av. Jose Ingenieros 3241, Beccar<br>
+      Buenos Aires, Argentina<br><br>
+      Argentina · Uruguay · Todo el país<br>
+      www.mattco.com.ar &nbsp;·&nbsp; @grupomattco
+    </p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">MATTCO</span>
+  <p>© 2026 MATTCO — Materiales & Terminaciones de Obra</p>
+  <div class="footer-links">
+    <a href="#marmoleria">Marmolería</a>
+    <a href="#obras">Obras</a>
+    <a href="#otros">Materiales</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://www.instagram.com/grupomattco/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lb-backdrop" id="lb-backdrop"></div>
+  <div class="lb-inner">
+    <button class="lb-close" id="lb-close" aria-label="Cerrar">✕</button>
+    <button class="lb-arrow prev" id="lb-prev" aria-label="Anterior"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <button class="lb-arrow next" id="lb-next" aria-label="Siguiente"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+  </div>
+  <div class="lb-info">
+    <p class="lb-nombre" id="lb-nombre"></p>
+    <p class="lb-tipo" id="lb-tipo"></p>
+    <p class="lb-counter" id="lb-counter"></p>
+    <div class="lb-dots" id="lb-dots"></div>
+  </div>
+</div>
+
+<a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ─── DATOS DE OBRAS ────────────────────────────────────────────────────────
+const OBRAS = [
+  { nombre: "Lote 260 · San Fermín",         tipo: "Mesadas Isla y Cocina en Purastone Greige",                                          imgs: ["images/obra-sanfermin260-1.jpg","images/obra-sanfermin260-2.jpg","images/obra-sanfermin260-3.jpg"] },
+  { nombre: "Lote 231 · San Fermín",         tipo: "Mesadas Isla y Cocina en Purastone Blanco Statuario",                                imgs: ["images/obra-sanfermin231-1.jpg","images/obra-sanfermin231-2.jpg","images/obra-sanfermin231-3.jpg","images/obra-sanfermin231-4.jpg"] },
+  { nombre: "Olmos · V. de Mayo",            tipo: "Mesada Isla y Cocina Purastone Prima Bianco Aria · Parrilla Granito Negro Brasil Leather · Mesada baño Purastone Prima Onix White", imgs: ["images/obra-olmos-1.jpg","images/obra-olmos-2.jpg","images/obra-olmos-3.jpg","images/obra-olmos-4.jpg"] },
+  { nombre: "Barbarita",                     tipo: "Revestimiento baño en Tundra Gray",                                                  imgs: ["images/obra-barbarita-1.jpg","images/obra-barbarita-2.jpg","images/obra-barbarita-3.jpg"] },
+  { nombre: "La Providencia · Canning",      tipo: "Travertino para pileta y galería",                                                   imgs: ["images/obra-providencia-1.jpg","images/obra-providencia-2.jpg","images/obra-providencia-3.jpg","images/obra-providencia-4.jpg","images/obra-providencia-5.jpg"] },
+  { nombre: "Talar de Pacheco",              tipo: "Travertino exterior · Galería, entrada y escaleras",                                  imgs: ["images/obra-talar-1.jpg","images/obra-talar-2.jpg","images/obra-talar-3.jpg","images/obra-talar-4.jpg"] },
+  { nombre: "Proyecto Lagunita · Nordelta",  tipo: "Travertino para pileta · Desarrollo Lagunita, Nordelta · CBI Real Estate",           imgs: ["images/obra-lagunita-1.jpg","images/obra-lagunita-2.jpg"] },
+  { nombre: "El Cantón",                    tipo: "Mesada de cocina e isla en Purastone Prima Metro Cream",                              imgs: ["images/obra-canton-1.jpg","images/obra-canton-2.jpg","images/obra-canton-3.jpg"] },
+  { nombre: "Showroom La Clementina",       tipo: "Mesada cocina y península en Purastone Statuario",                                    imgs: ["images/obra-clementina-1.jpg","images/obra-clementina-2.jpg","images/obra-clementina-3.jpg"] },
+];
+
+// ─── GENERAR CARDS EN EL CARRUSEL ─────────────────────────────────────────
+const carousel = document.getElementById('obras-carousel');
+OBRAS.forEach(function(obra, idx) {
+  const card = document.createElement('div');
+  card.className = 'obra-card';
+  const total = obra.imgs.length;
+  card.innerHTML =
+    '<div class="obra-card-img">' +
+      '<img src="' + obra.imgs[0] + '" alt="' + obra.nombre + '" loading="lazy">' +
+      (total > 1 ? '<span class="obra-foto-count">' + total + ' fotos</span>' : '') +
+    '</div>' +
+    '<div class="obra-card-info">' +
+      '<p class="obra-nombre">' + obra.nombre + '</p>' +
+      '<p class="obra-tipo">' + obra.tipo + '</p>' +
+    '</div>';
+  card.addEventListener('click', function() { openLightbox(idx, 0); });
+  carousel.appendChild(card);
+});
+
+// ─── FLECHAS DEL CARRUSEL HORIZONTAL ──────────────────────────────────────
+document.querySelector('.obras-nav.prev').addEventListener('click', function() {
+  carousel.scrollBy({ left: -360, behavior: 'smooth' });
+});
+document.querySelector('.obras-nav.next').addEventListener('click', function() {
+  carousel.scrollBy({ left: 360, behavior: 'smooth' });
+});
+
+// ─── ESTADO DEL LIGHTBOX ───────────────────────────────────────────────────
+let lb = { obraIdx: 0, imgIdx: 0, open: false };
+
+// ─── LIGHTBOX ──────────────────────────────────────────────────────────────
+const lbEl      = document.getElementById('lightbox');
+const lbImg     = document.getElementById('lb-img');
+const lbNombre  = document.getElementById('lb-nombre');
+const lbTipo    = document.getElementById('lb-tipo');
+const lbCounter = document.getElementById('lb-counter');
+const lbDots    = document.getElementById('lb-dots');
+
+function openLightbox(obraIdx, imgIdx) {
+  lb.obraIdx = obraIdx;
+  lb.imgIdx  = imgIdx;
+  lb.open    = true;
+  document.body.style.overflow = 'hidden';
+  lbEl.classList.add('active');
+  renderLightbox(false);
+}
+
+function closeLightbox() {
+  lb.open = false;
+  document.body.style.overflow = '';
+  lbEl.classList.remove('active');
+}
+
+function lbGo(dir) {
+  const total = OBRAS[lb.obraIdx].imgs.length;
+  lb.imgIdx = (lb.imgIdx + dir + total) % total;
+  renderLightbox(true);
+}
+
+function renderLightbox(animate) {
+  const obra  = OBRAS[lb.obraIdx];
+  const total = obra.imgs.length;
+  const src   = obra.imgs[lb.imgIdx];
+
+  document.getElementById('lb-prev').style.display = total > 1 ? '' : 'none';
+  document.getElementById('lb-next').style.display = total > 1 ? '' : 'none';
+
+  if (animate) {
+    lbImg.classList.add('fading');
+    setTimeout(function(){
+      lbImg.src = src;
+      lbImg.alt = obra.nombre + ' ' + (lb.imgIdx+1);
+      lbImg.classList.remove('fading');
+    }, 200);
+  } else {
+    lbImg.src = src;
+    lbImg.alt = obra.nombre + ' ' + (lb.imgIdx+1);
+  }
+
+  lbNombre.textContent  = obra.nombre;
+  lbTipo.textContent    = obra.tipo;
+  lbCounter.textContent = total > 1 ? (lb.imgIdx+1) + ' / ' + total : '';
+
+  lbDots.innerHTML = '';
+  if (total > 1) {
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'lb-dot' + (i===lb.imgIdx?' active':'');
+      (function(ii){ dot.addEventListener('click', function(){ lb.imgIdx = ii; renderLightbox(true); }); })(i);
+      lbDots.appendChild(dot);
+    }
+  }
+}
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', function(){ lbGo(-1); });
+document.getElementById('lb-next').addEventListener('click', function(){ lbGo(1); });
+
+document.addEventListener('keydown', function(e){
+  if (!lb.open) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowLeft')  lbGo(-1);
+  if (e.key === 'ArrowRight') lbGo(1);
+});
+
+var lbStartX = 0;
+lbEl.addEventListener('touchstart', function(e){ lbStartX = e.touches[0].clientX; }, { passive: true });
+lbEl.addEventListener('touchend',   function(e){
+  var diff = lbStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) lbGo(diff > 0 ? 1 : -1);
+});
+</script>
+</body>
+</html>
