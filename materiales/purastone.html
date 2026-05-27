@@ -37,6 +37,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .material-tab:hover{color:var(--verde);}
 .material-tab.active{background:var(--verde);color:var(--crema);}
 
+.caracteristicas{padding:2rem 3rem;border-bottom:1px solid rgba(61,74,46,0.08);background:var(--blanco);}
+.caracteristicas-inner{max-width:1200px;margin:0 auto;display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}
+.caract-img{height:120px;width:auto;object-fit:contain;display:block;}
+@media(max-width:900px){
+  .caracteristicas{padding:1.5rem;}
+  .caract-img{height:85px;}
+}
+
 /* GRID DE COLORES — cuadrados simétricos */
 .catalog-wrap{padding:3rem 3rem 5rem;max-width:1200px;margin:0 auto;}
 .colors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
@@ -106,6 +114,15 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
       <a href="purastone-prima.html" class="material-tab">Purastone Prima</a>
       <a href="neolith.html" class="material-tab">Neolith</a>
     </div>
+  </div>
+</div>
+
+<div class="caracteristicas">
+  <div class="caracteristicas-inner">
+    <img src="../images/materiales/purastone/impacto.jpg" alt="Resistencia al impacto" class="caract-img">
+    <img src="../images/materiales/purastone/manchas.jpg" alt="Resistencia a manchas" class="caract-img">
+    <img src="../images/materiales/purastone/facil.jpg" alt="Fácil de limpiar" class="caract-img">
+    <img src="../images/materiales/purastone/Garantia.jpg" alt="Garantía" class="caract-img">
   </div>
 </div>
 
