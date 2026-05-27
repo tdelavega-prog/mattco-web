@@ -23,6 +23,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a:hover{color:var(--verde);}
 .nav-cta{background:var(--verde)!important;color:var(--blanco)!important;padding:0.55rem 1.4rem;border-radius:2px;font-size:0.75rem!important;letter-spacing:0.1em!important;}
 .nav-cta:hover{background:var(--verde-claro)!important;}
+.nav-dropdown{position:relative;}
+.nav-dropdown-btn{display:flex;align-items:center;gap:0.35rem;color:var(--negro);font-size:0.78rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;cursor:default;background:none;border:none;padding:0;font-family:'DM Sans',sans-serif;}
+.nav-dropdown:hover .nav-dropdown-btn{color:var(--verde);}
+.nav-dropdown-btn svg{width:9px;height:9px;transition:transform 0.2s;}
+.nav-dropdown:hover .nav-dropdown-btn svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 0.8rem);left:0;background:var(--blanco);border:1px solid rgba(61,74,46,0.1);border-radius:2px;min-width:190px;opacity:0;visibility:hidden;transform:translateY(4px);transition:all 0.18s;z-index:300;box-shadow:0 8px 24px rgba(26,26,24,0.08);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:0.75rem 1.2rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--negro);border-bottom:1px solid rgba(61,74,46,0.06);transition:all 0.15s;}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{background:var(--crema-oscuro);color:var(--verde);}
 
 /* HEADER */
 .page-header{padding:8rem 3rem 3rem;border-bottom:1px solid rgba(61,74,46,0.1);}
@@ -85,7 +95,14 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 <nav>
   <div class="nav-logo"><a href="../index.html"><span>MATTCO</span></a></div>
   <div class="nav-links">
-    <a href="../index.html#marmoleria">Marmolería</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn">Catálogo Mesadas <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+      <div class="nav-dropdown-menu">
+        <a href="purastone.html">Purastone</a>
+        <a href="purastone-prima.html">Purastone Prima</a>
+        <a href="neolith.html">Neolith</a>
+      </div>
+    </div>
     <a href="../obras.html">Obras</a>
     <a href="../index.html#otros">Materiales</a>
     <a href="../index.html#contacto">Contacto</a>
