@@ -68,13 +68,11 @@ section{padding:6rem 3rem;}
 
 
 /* OTROS MATERIALES */
-#otros{background:var(--blanco);}
-.rubros-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3.5rem;border-top:1px solid rgba(61,74,46,0.1);}
-.rubro-item{padding:2rem 2rem 2rem 0;border-bottom:1px solid rgba(61,74,46,0.1);}
-.rubro-item:nth-child(even){padding-left:2rem;padding-right:0;border-left:1px solid rgba(61,74,46,0.1);}
-.rubro-num{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--verde-claro);display:block;margin-bottom:0.5rem;}
-.rubro-nombre{font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;color:var(--negro);}
-.rubro-desc{font-size:0.82rem;color:var(--gris);line-height:1.65;}
+#otros{background:var(--crema-oscuro);padding:4rem 3rem;}
+.rubros-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(61,74,46,0.12);margin-top:2.5rem;}
+.rubro-btn{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;background:var(--crema-oscuro);text-decoration:none;color:var(--negro);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.2s;}
+.rubro-btn:hover{background:var(--verde);color:var(--crema);}
+.rubro-btn::after{content:'→';opacity:0.35;font-size:0.85rem;}
 
 /* CONTACTO */
 #contacto{background:var(--crema);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;}
@@ -111,8 +109,8 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   .contacto-img{min-height:240px;}
   .contacto-content{padding:3rem 1.5rem;}
   footer{flex-direction:column;gap:1rem;text-align:center;}
-  .rubros-grid{grid-template-columns:1fr;}
-  .rubro-item:nth-child(even){padding-left:0;border-left:none;}
+  .rubros-btns{grid-template-columns:repeat(2,1fr);}
+  #otros{padding:3rem 1.5rem;}
 }
 @media(max-width:600px){
   .hero-title{font-size:2.2rem;}
@@ -196,41 +194,17 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 <section id="otros">
   <div style="max-width:1200px;margin:0 auto;">
     <p class="section-label">03 — Otros materiales</p>
-    <h2 class="section-title">Todo lo que tu obra<br>necesita</h2>
-    <p class="section-sub">Una línea completa de materiales y terminaciones. Consultanos por cualquier rubro — enviamos a todo el país.</p>
-    <div class="rubros-grid">
-      <div class="rubro-item">
-        <span class="rubro-num">03.1</span>
-        <h3 class="rubro-nombre">Baldosas y pisos</h3>
-        <p class="rubro-desc">Porcelanato, mármol, travertino, granito, sinterizado y terrazzo. Nacionales e importados. De Stefano 1913, VITE, Atlas Concorde, Navarti, Quadri, Piu Cerámicas.</p>
-      </div>
-      <div class="rubro-item">
-        <span class="rubro-num">03.2</span>
-        <h3 class="rubro-nombre">Cocinas y anafes</h3>
-        <p class="rubro-desc">Muebles a medida, bachas de acero, hornos eléctricos y anafes europeos integrados. Clever, BeGo Studio, Pitt Cooking, Johnson Acero.</p>
-      </div>
-      <div class="rubro-item">
-        <span class="rubro-num">03.3</span>
-        <h3 class="rubro-nombre">Sanitarios y griferías</h3>
-        <p class="rubro-desc">Tecnología, eficiencia del agua y diseño. Marcas líderes para baño y cocina. Duravit, Piazza, Tauro, TOTO, Hydros.</p>
-      </div>
-      <div class="rubro-item">
-        <span class="rubro-num">03.4</span>
-        <h3 class="rubro-nombre">Climatización</h3>
-        <p class="rubro-desc">Calderas, pisos radiantes, bombas de calor, multisplit y sistemas sustentables. Con instalación. Ferroli, Asua, Immergas, Rheem, Gree, Fedders.</p>
-      </div>
-      <div class="rubro-item">
-        <span class="rubro-num">03.5</span>
-        <h3 class="rubro-nombre">Iluminación</h3>
-        <p class="rubro-desc">LED, decorativa, exterior y emergencia. Soluciones lumínicas a medida. Grupo Vonderk, Idea Luz, Lucciola, LedsC4.</p>
-      </div>
-      <div class="rubro-item">
-        <span class="rubro-num">03.6</span>
-        <h3 class="rubro-nombre">Aberturas y ventanas</h3>
-        <p class="rubro-desc">Aluminio y PVC de alta prestación. Puertas de placa, chapa y puertas ignífugas certificadas. Oblak, Gromanti, Mesquita Hermanos, Augen.</p>
-      </div>
+    <h2 class="section-title">Todo lo que<br>tu obra necesita</h2>
+    <p class="section-sub">Además de marmolería, trabajamos todos los rubros de terminaciones para tu proyecto.</p>
+    <div class="rubros-btns">
+      <a href="#" class="rubro-btn">Baldosas y pisos</a>
+      <a href="#" class="rubro-btn">Cocinas y anafes</a>
+      <a href="#" class="rubro-btn">Sanitarios y griferías</a>
+      <a href="#" class="rubro-btn">Climatización</a>
+      <a href="#" class="rubro-btn">Iluminación</a>
+      <a href="#" class="rubro-btn">Aberturas y ventanas</a>
     </div>
-    <div style="text-align:center;margin-top:3.5rem;">
+    <div style="text-align:center;margin-top:2.5rem;">
       <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20cotizar%20materiales%20para%20mi%20obra" class="btn-verde">Consultar por WhatsApp</a>
     </div>
   </div>
