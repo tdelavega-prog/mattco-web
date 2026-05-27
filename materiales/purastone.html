@@ -59,8 +59,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .catalog-wrap{padding:3rem 3rem 5rem;max-width:1200px;margin:0 auto;}
 .colors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
 .color-card{background:var(--blanco);}
-.color-img{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--crema-oscuro);display:flex;align-items:center;justify-content:center;}
-.color-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.color-img{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--crema-oscuro);display:flex;align-items:center;justify-content:center;position:relative;}
+.color-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 0.35s ease;}
+.color-img img.img-app{opacity:0;}
+.color-card:hover .color-img img.img-tex{opacity:0;}
+.color-card:hover .color-img img.img-app{opacity:1;}
 .color-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .color-placeholder span{font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(61,74,46,0.22);}
 .color-info{padding:0.6rem 0.2rem 0.8rem;}
@@ -216,8 +219,9 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 </a>
 
 <script>
-// Auto-carga imágenes. Naming: data-nombre en minúscula con guiones → archivo .jpg
-// Ej: "Blanco Nube" → data-nombre="Blanco Nube" → busca "blanco-nube.jpg"
+// Auto-carga imágenes por slug.
+// Textura: [slug].jpg — Ambiente (hover): [slug]-app.jpg
+// Al subir [slug]-app.jpg el hover aparece automáticamente, sin tocar código.
 function toSlug(str) {
   return str.toLowerCase()
     .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u')
@@ -229,16 +233,27 @@ function toSlug(str) {
 
 document.querySelectorAll('.color-card').forEach(function(card) {
   var nombre = card.getAttribute('data-nombre');
-  var slug = toSlug(nombre);
+  var slug = card.getAttribute('data-slug') || toSlug(nombre);
   var imgWrap = card.querySelector('.color-img');
-  var img = new Image();
-  img.onload = function() {
+  var base = '../images/materiales/purastone/';
+
+  var imgTex = new Image();
+  imgTex.className = 'img-tex';
+  imgTex.alt = nombre;
+  imgTex.onload = function() {
     imgWrap.innerHTML = '';
-    img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-    imgWrap.appendChild(img);
+    imgWrap.appendChild(imgTex);
+
+    // Intentar cargar foto de ambiente (hover)
+    var imgApp = new Image();
+    imgApp.className = 'img-app';
+    imgApp.alt = nombre + ' aplicado';
+    imgApp.onload = function() {
+      imgWrap.appendChild(imgApp);
+    };
+    imgApp.src = base + slug + '-app.jpg';
   };
-  img.src = '../images/materiales/purastone/' + slug + '.jpg';
-  img.alt = nombre;
+  imgTex.src = base + slug + '.jpg';
 });
 </script>
 </body>
