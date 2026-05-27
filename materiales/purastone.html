@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Purastone — Catálogo de colores · MATTCO</title>
+<title>Purastone — Colores · MATTCO</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%233D4A2E'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='22' font-weight='300' fill='%23F5F2EC' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Catálogo completo de colores Purastone — cuarzo de ingeniería para mesadas. MATTCO.">
+<meta name="description" content="Catálogo de colores Purastone — cuarzo de ingeniería para mesadas. MATTCO.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,35 +24,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta{background:var(--verde)!important;color:var(--blanco)!important;padding:0.55rem 1.4rem;border-radius:2px;font-size:0.75rem!important;letter-spacing:0.1em!important;}
 .nav-cta:hover{background:var(--verde-claro)!important;}
 
-.page-header{padding:8rem 3rem 3.5rem;border-bottom:1px solid rgba(61,74,46,0.1);}
+/* HEADER */
+.page-header{padding:8rem 3rem 3rem;border-bottom:1px solid rgba(61,74,46,0.1);}
 .page-header-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;}
-.breadcrumb{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris);margin-bottom:1rem;}
+.breadcrumb{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris);margin-bottom:0.8rem;}
 .breadcrumb a{color:var(--verde);text-decoration:none;}
-.breadcrumb a:hover{text-decoration:underline;}
-.section-label{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--verde);margin-bottom:0.8rem;}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.15;color:var(--negro);margin-bottom:0.8rem;}
-.page-desc{font-size:0.88rem;color:var(--gris);line-height:1.8;max-width:480px;}
-.material-tabs{display:flex;gap:0;border:1px solid rgba(61,74,46,0.15);border-radius:2px;overflow:hidden;}
-.material-tab{padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--gris);transition:all 0.2s;}
+.section-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--verde);margin-bottom:0.6rem;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;color:var(--negro);margin-bottom:0.6rem;}
+.page-desc{font-size:0.86rem;color:var(--gris);line-height:1.75;max-width:440px;}
+.material-tabs{display:flex;gap:0;border:1px solid rgba(61,74,46,0.15);border-radius:2px;overflow:hidden;flex-shrink:0;}
+.material-tab{padding:0.55rem 1.1rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--gris);transition:all 0.2s;white-space:nowrap;}
 .material-tab:hover{color:var(--verde);}
 .material-tab.active{background:var(--verde);color:var(--crema);}
 
-.catalog-section{padding:3.5rem 3rem;max-width:1200px;margin:0 auto;}
-.catalog-group{margin-bottom:4rem;}
-.group-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(61,74,46,0.1);}
-.colors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(61,74,46,0.08);}
-.color-card{background:var(--blanco);cursor:default;}
-.color-img{width:100%;height:200px;overflow:hidden;background:var(--crema-oscuro);position:relative;}
+/* GRID DE COLORES — cuadrados simétricos */
+.catalog-wrap{padding:3rem 3rem 5rem;max-width:1200px;margin:0 auto;}
+.colors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
+.color-card{background:var(--blanco);}
+.color-img{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--crema-oscuro);display:flex;align-items:center;justify-content:center;}
 .color-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.color-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--crema-oscuro);}
-.color-img-placeholder span{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(61,74,46,0.3);}
-.color-info{padding:0.9rem 1rem;}
-.color-nombre{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--negro);line-height:1.3;}
+.color-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.color-placeholder span{font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(61,74,46,0.22);}
+.color-info{padding:0.6rem 0.2rem 0.8rem;}
+.color-nombre{font-family:'Cormorant Garamond',serif;font-size:0.92rem;font-weight:300;color:var(--negro);line-height:1.3;}
 
-.page-cta{background:var(--crema);padding:4rem 3rem;text-align:center;}
-.page-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--negro);margin-bottom:1rem;}
-.page-cta p{font-size:0.88rem;color:var(--gris);max-width:480px;margin:0 auto 2rem;line-height:1.8;}
-.btn-verde{display:inline-flex;align-items:center;gap:0.6rem;background:var(--verde);color:var(--crema);text-decoration:none;padding:0.9rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;}
+/* CTA */
+.page-cta{background:var(--crema);padding:3.5rem 3rem;text-align:center;border-top:1px solid rgba(61,74,46,0.08);}
+.page-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--negro);margin-bottom:0.8rem;}
+.page-cta p{font-size:0.86rem;color:var(--gris);max-width:420px;margin:0 auto 1.8rem;line-height:1.8;}
+.btn-verde{display:inline-flex;align-items:center;gap:0.6rem;background:var(--verde);color:var(--crema);text-decoration:none;padding:0.85rem 1.8rem;font-size:0.76rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;}
 .btn-verde:hover{background:var(--verde-claro);}
 
 footer{background:var(--negro);color:rgba(245,244,240,0.25);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
@@ -70,14 +70,13 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   nav{padding:1rem 1.5rem;}
   .nav-links{display:none;}
   .page-header{padding:6rem 1.5rem 2.5rem;}
-  .catalog-section{padding:2.5rem 1.5rem;}
-  .colors-grid{grid-template-columns:repeat(2,1fr);}
+  .catalog-wrap{padding:2rem 1.5rem 4rem;}
+  .colors-grid{grid-template-columns:repeat(3,1fr);}
   .page-cta{padding:3rem 1.5rem;}
   footer{flex-direction:column;gap:1rem;text-align:center;}
 }
-@media(max-width:480px){
-  .colors-grid{grid-template-columns:1fr 1fr;}
-  .color-img{height:160px;}
+@media(max-width:500px){
+  .colors-grid{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -110,83 +109,56 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   </div>
 </div>
 
-<div class="catalog-section">
+<div class="catalog-wrap">
+  <div class="colors-grid" id="colors-grid">
 
-  <div class="catalog-group">
-    <p class="group-label">Blancos y Cremas</p>
-    <div class="colors-grid">
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Nube</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Cana</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Icon</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Glitter</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Paloma</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Terrazzo White</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Crema Pisa</p></div></div>
-    </div>
+    <div class="color-card" data-nombre="Blanco Nube"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Nube</p></div></div>
+    <div class="color-card" data-nombre="Blanco Cana"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Cana</p></div></div>
+    <div class="color-card" data-nombre="Blanco Icon"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Icon</p></div></div>
+    <div class="color-card" data-nombre="Blanco Glitter"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Glitter</p></div></div>
+    <div class="color-card" data-nombre="Blanco Paloma"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blanco Paloma</p></div></div>
+    <div class="color-card" data-nombre="Terrazzo White"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Terrazzo White</p></div></div>
+    <div class="color-card" data-nombre="Crema Pisa"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Crema Pisa</p></div></div>
+    <div class="color-card" data-nombre="Venatino"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Venatino</p></div></div>
+    <div class="color-card" data-nombre="Statuario"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Statuario</p></div></div>
+    <div class="color-card" data-nombre="Bianco Silver"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Bianco Silver</p></div></div>
+    <div class="color-card" data-nombre="Bianco Luxe"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Bianco Luxe</p></div></div>
+    <div class="color-card" data-nombre="Arabescato Venatino"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Arabescato Venatino</p></div></div>
+    <div class="color-card" data-nombre="Calacatta Gold"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Gold</p></div></div>
+    <div class="color-card" data-nombre="Calacatta Clasico"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Clásico</p></div></div>
+    <div class="color-card" data-nombre="Calacatta Borghini"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Borghini</p></div></div>
+    <div class="color-card" data-nombre="Estatuario Venato"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Estatuario Venato</p></div></div>
+    <div class="color-card" data-nombre="Calacatta Antico"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Antico</p></div></div>
+    <div class="color-card" data-nombre="Arabescato Cervaiole"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Arabescato Cervaiole</p></div></div>
+    <div class="color-card" data-nombre="Calacatta D Or"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta D'Or</p></div></div>
+    <div class="color-card" data-nombre="Calacatta Versalles"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Versalles</p></div></div>
+    <div class="color-card" data-nombre="Taj"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Taj</p></div></div>
+    <div class="color-card" data-nombre="Invisible Grey"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Invisible Grey</p></div></div>
+    <div class="color-card" data-nombre="Concrete"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Concrete</p></div></div>
+    <div class="color-card" data-nombre="Concrete Dark"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Concrete Dark</p></div></div>
+    <div class="color-card" data-nombre="Gris Zen"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Gris Zen</p></div></div>
+    <div class="color-card" data-nombre="Gris Fosil"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Gris Fosil</p></div></div>
+    <div class="color-card" data-nombre="Cemento"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Cemento</p></div></div>
+    <div class="color-card" data-nombre="Gris Topo"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Gris Topo</p></div></div>
+    <div class="color-card" data-nombre="Greyge"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Greyge</p></div></div>
+    <div class="color-card" data-nombre="Basaltina"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Basaltina</p></div></div>
+    <div class="color-card" data-nombre="Porfido Gris"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Pórfido Gris</p></div></div>
+    <div class="color-card" data-nombre="Concrete Sand"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Concrete Sand</p></div></div>
+    <div class="color-card" data-nombre="Negro Glitter"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negro Glitter</p></div></div>
+    <div class="color-card" data-nombre="Negro Marquina"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negro Marquina</p></div></div>
+    <div class="color-card" data-nombre="Noir"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Noir</p></div></div>
+    <div class="color-card" data-nombre="Negro Betun"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negro Betun</p></div></div>
+    <div class="color-card" data-nombre="Blue"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blue</p></div></div>
+    <div class="color-card" data-nombre="Sat"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Sat</p></div></div>
+    <div class="color-card" data-nombre="Pink"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Pink</p></div></div>
+
   </div>
-
-  <div class="catalog-group">
-    <p class="group-label">Calcattas y Mármoles</p>
-    <div class="colors-grid">
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Venatino</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Statuario</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Bianco Silver</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Bianco Luxe</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Arabescato Venatino</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Gold</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Clásico</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Borghini</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Estatuario Venato</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Antico</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Arabescato Cervaiole</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta D'Or</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Calacatta Versalles</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Taj</p></div></div>
-    </div>
-  </div>
-
-  <div class="catalog-group">
-    <p class="group-label">Grises y Concretos</p>
-    <div class="colors-grid">
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Invisible Grey</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Concrete</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Concrete Dark</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Gris Zen</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Gris Fosil</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Cemento</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Gris Topo</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Greyge</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Basaltina</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Pórfido Gris</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Concrete Sand</p></div></div>
-    </div>
-  </div>
-
-  <div class="catalog-group">
-    <p class="group-label">Negros</p>
-    <div class="colors-grid">
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negro Glitter</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negro Marquina</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Noir</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negro Betun</p></div></div>
-    </div>
-  </div>
-
-  <div class="catalog-group">
-    <p class="group-label">Especiales</p>
-    <div class="colors-grid">
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Blue</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Sat</p></div></div>
-      <div class="color-card"><div class="color-img"><div class="color-img-placeholder"><span>foto próximamente</span></div></div><div class="color-info"><p class="color-nombre">Pink</p></div></div>
-    </div>
-  </div>
-
 </div>
 
 <div class="page-cta">
   <h2>¿Te interesa algún color?</h2>
-  <p>Consultanos por WhatsApp y te asesoramos sin cargo. Podemos mostrarte muestras físicas en obra.</p>
-  <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20consultar%20sobre%20colores%20de%20Purastone%20para%20mi%20proyecto" class="btn-verde">
+  <p>Consultanos por WhatsApp. Podemos mostrarte muestras físicas antes de decidir.</p>
+  <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20consultar%20sobre%20colores%20de%20Purastone" class="btn-verde">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Consultar por WhatsApp
   </a>
@@ -207,5 +179,31 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<script>
+// Auto-carga imágenes. Naming: data-nombre en minúscula con guiones → archivo .jpg
+// Ej: "Blanco Nube" → data-nombre="Blanco Nube" → busca "blanco-nube.jpg"
+function toSlug(str) {
+  return str.toLowerCase()
+    .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u')
+    .replace(/ñ/g,'n')
+    .replace(/[^a-z0-9\s]/g,'')
+    .trim()
+    .replace(/\s+/g,'-');
+}
+
+document.querySelectorAll('.color-card').forEach(function(card) {
+  var nombre = card.getAttribute('data-nombre');
+  var slug = toSlug(nombre);
+  var imgWrap = card.querySelector('.color-img');
+  var img = new Image();
+  img.onload = function() {
+    imgWrap.innerHTML = '';
+    img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+    imgWrap.appendChild(img);
+  };
+  img.src = '../images/materiales/purastone/' + slug + '.jpg';
+  img.alt = nombre;
+});
+</script>
 </body>
 </html>
