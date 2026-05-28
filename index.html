@@ -56,6 +56,12 @@ section{padding:6rem 3rem;}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.2;color:var(--negro);margin-bottom:1.5rem;}
 .section-sub{font-size:0.9rem;color:var(--gris);line-height:1.8;max-width:520px;}
 
+/* QUÉ HACEMOS / QUIÉNES SOMOS */
+.qh-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 4rem;align-items:start;max-width:1100px;margin:0 auto;}
+.qh-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--verde);margin-bottom:1.1rem;line-height:1.2;}
+.qh-divider{background:rgba(61,74,46,0.12);}
+@media(max-width:900px){.qh-grid{grid-template-columns:1fr;gap:2.5rem;}.qh-divider{display:none;}}
+
 /* MARMOLERÍA */
 #marmoleria{background:var(--crema);}
 .marm-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3.5rem;}
@@ -163,10 +169,16 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 </section>
 
 <section id="que-hacemos" style="background:var(--blanco);padding:5rem 3rem;">
-  <div style="max-width:760px;margin:0 auto;text-align:center;">
-    <p class="section-label">¿Qué hacemos?</p>
-    <h2 class="section-title" style="margin-bottom:1.2rem;">Materiales y terminaciones<br>para tu proyecto</h2>
-    <p class="section-sub" style="max-width:620px;margin:0 auto;">Nos especializamos en mesadas de mármol, cuarzo y piedra sinterizada, pisos y revestimientos. Te ayudamos a elegir el material ideal para tu proyecto y nos encargamos de todo — desde el asesoramiento hasta la colocación. Trabajamos con las mejores marcas del mercado para que cada superficie de tu casa sea exactamente como la imaginaste.</p>
+  <div class="qh-grid">
+    <div>
+      <p class="qh-title">¿Qué hacemos?</p>
+      <p class="section-sub">Nos especializamos en mesadas de mármol, cuarzo y piedra sinterizada, pisos y revestimientos. Te ayudamos a elegir el material ideal para tu proyecto y nos encargamos de todo — desde el asesoramiento hasta la colocación. Trabajamos con las mejores marcas del mercado para que cada superficie de tu casa sea exactamente como la imaginaste.</p>
+    </div>
+    <div class="qh-divider"></div>
+    <div>
+      <p class="qh-title">¿Quiénes somos?</p>
+      <p class="section-sub">Somos una empresa joven de profesionales del rubro, especializada en marmolería de primer nivel con el respaldo exclusivo de De Stefano 1913, referente indiscutido del mercado argentino. Diseñamos cada proyecto a medida, acompañando al cliente desde la primera consulta hasta el servicio post venta.</p>
+    </div>
   </div>
 </section>
 
