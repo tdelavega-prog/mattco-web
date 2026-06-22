@@ -57,10 +57,18 @@ section{padding:6rem 3rem;}
 .section-sub{font-size:0.9rem;color:var(--gris);line-height:1.8;max-width:520px;}
 
 /* QUÉ HACEMOS / QUIÉNES SOMOS */
-.qh-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 4rem;align-items:start;max-width:1100px;margin:0 auto;}
+.qh-wrap{max-width:1100px;margin:0 auto;}
+.qh-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 4rem;align-items:start;}
 .qh-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--verde);margin-bottom:1.1rem;line-height:1.2;}
 .qh-divider{background:rgba(61,74,46,0.12);}
-@media(max-width:900px){.qh-grid{grid-template-columns:1fr;gap:2.5rem;}.qh-divider{display:none;}}
+.qh-icons{display:flex;justify-content:center;gap:4rem;margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(61,74,46,0.1);}
+.qh-icon-item{display:flex;flex-direction:column;align-items:center;gap:0.8rem;}
+.qh-icon-item img{width:44px;}
+.qh-icon-item span{font-size:0.67rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gris);}
+.rubro-icon{width:26px;flex-shrink:0;transition:filter 0.2s;}
+.rubro-btn:hover .rubro-icon{filter:brightness(0) invert(1);}
+@media(max-width:900px){.qh-grid{grid-template-columns:1fr;gap:2.5rem;}.qh-divider{display:none;}.qh-icons{gap:2rem;}}
+@media(max-width:600px){.qh-icon-item img{width:36px;}}
 
 /* MARMOLERÍA */
 #marmoleria{background:var(--crema);}
@@ -86,7 +94,7 @@ section{padding:6rem 3rem;}
 /* OTROS MATERIALES */
 #otros{background:var(--crema-oscuro);padding:4rem 3rem;}
 .rubros-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(61,74,46,0.12);margin-top:2.5rem;}
-.rubro-btn{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;background:var(--crema-oscuro);text-decoration:none;color:var(--negro);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.2s;}
+.rubro-btn{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;background:var(--crema-oscuro);text-decoration:none;color:var(--negro);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.2s;}
 .rubro-btn:hover{background:var(--verde);color:var(--crema);}
 .rubro-btn::after{content:'→';opacity:0.35;font-size:0.85rem;}
 
@@ -169,15 +177,23 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 </section>
 
 <section id="que-hacemos" style="background:var(--blanco);padding:5rem 3rem;">
-  <div class="qh-grid">
-    <div>
-      <p class="qh-title">¿Qué hacemos?</p>
-      <p class="section-sub">Nos especializamos en mesadas de mármol, cuarzo y piedra sinterizada, pisos y revestimientos. Te ayudamos a elegir el material ideal para tu proyecto y nos encargamos de todo — desde el asesoramiento hasta la colocación. Trabajamos con las mejores marcas del mercado para que cada superficie de tu casa sea exactamente como la imaginaste.</p>
+  <div class="qh-wrap">
+    <div class="qh-grid">
+      <div>
+        <p class="qh-title">¿Qué hacemos?</p>
+        <p class="section-sub">Nos especializamos en mesadas de mármol, cuarzo y piedra sinterizada, pisos y revestimientos. Te ayudamos a elegir el material ideal para tu proyecto y nos encargamos de todo — desde el asesoramiento hasta la colocación. Trabajamos con las mejores marcas del mercado para que cada superficie de tu casa sea exactamente como la imaginaste.</p>
+      </div>
+      <div class="qh-divider"></div>
+      <div>
+        <p class="qh-title">¿Quiénes somos?</p>
+        <p class="section-sub">Somos una empresa joven de profesionales del rubro, especializada en marmolería de primer nivel con el respaldo exclusivo de De Stefano 1913, referente indiscutido del mercado argentino. Diseñamos cada proyecto a medida, acompañando al cliente desde la primera consulta hasta el servicio post venta.</p>
+      </div>
     </div>
-    <div class="qh-divider"></div>
-    <div>
-      <p class="qh-title">¿Quiénes somos?</p>
-      <p class="section-sub">Somos una empresa joven de profesionales del rubro, especializada en marmolería de primer nivel con el respaldo exclusivo de De Stefano 1913, referente indiscutido del mercado argentino. Diseñamos cada proyecto a medida, acompañando al cliente desde la primera consulta hasta el servicio post venta.</p>
+    <div class="qh-icons">
+      <div class="qh-icon-item"><img src="assets/icons/mattco-mesada.svg" alt="Mesadas"><span>Mesadas</span></div>
+      <div class="qh-icon-item"><img src="assets/icons/mattco-medicion.svg" alt="Medición"><span>Medición</span></div>
+      <div class="qh-icon-item"><img src="assets/icons/mattco-entrega.svg" alt="Entrega"><span>Entrega</span></div>
+      <div class="qh-icon-item"><img src="assets/icons/mattco-baldosa.svg" alt="Pisos"><span>Pisos</span></div>
     </div>
   </div>
 </section>
@@ -236,12 +252,12 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
     <h2 class="section-title">Todo lo que<br>tu obra necesita</h2>
     <p class="section-sub">Además de marmolería, trabajamos todos los rubros de terminaciones para tu proyecto.</p>
     <div class="rubros-btns">
-      <a href="#" class="rubro-btn">Baldosas y pisos</a>
-      <a href="#" class="rubro-btn">Cocinas y anafes</a>
-      <a href="#" class="rubro-btn">Sanitarios y griferías</a>
-      <a href="#" class="rubro-btn">Climatización</a>
-      <a href="#" class="rubro-btn">Iluminación</a>
-      <a href="#" class="rubro-btn">Aberturas y ventanas</a>
+      <a href="#" class="rubro-btn"><img src="assets/icons/mattco-baldosa.svg" alt="" class="rubro-icon">Baldosas y pisos</a>
+      <a href="#" class="rubro-btn"><img src="assets/icons/mattco-cocina.svg" alt="" class="rubro-icon">Cocinas y anafes</a>
+      <a href="#" class="rubro-btn"><img src="assets/icons/mattco-banera.svg" alt="" class="rubro-icon">Sanitarios y griferías</a>
+      <a href="#" class="rubro-btn"><img src="assets/icons/mattco-aire.svg" alt="" class="rubro-icon">Climatización</a>
+      <a href="#" class="rubro-btn"><img src="assets/icons/mattco-solar.svg" alt="" class="rubro-icon">Iluminación</a>
+      <a href="#" class="rubro-btn"><img src="assets/icons/mattco-puerta.svg" alt="" class="rubro-icon">Aberturas y ventanas</a>
     </div>
     <div style="text-align:center;margin-top:2.5rem;">
       <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20cotizar%20materiales%20para%20mi%20obra" class="btn-verde">Consultar por WhatsApp</a>
