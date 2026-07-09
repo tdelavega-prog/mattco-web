@@ -28,7 +28,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-dropdown:hover .nav-dropdown-btn{color:var(--verde);}
 .nav-dropdown-btn svg{width:9px;height:9px;transition:transform 0.2s;}
 .nav-dropdown:hover .nav-dropdown-btn svg{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 0.8rem);left:0;background:var(--blanco);border:1px solid rgba(61,74,46,0.1);border-radius:2px;min-width:190px;opacity:0;visibility:hidden;transform:translateY(4px);transition:all 0.18s;z-index:300;box-shadow:0 8px 24px rgba(26,26,24,0.08);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 0.8rem);left:0;background:var(--blanco);border:1px solid rgba(61,74,46,0.1);border-radius:2px;min-width:230px;opacity:0;visibility:hidden;transform:translateY(4px);transition:all 0.18s;z-index:300;box-shadow:0 8px 24px rgba(26,26,24,0.08);}
+.nav-dropdown-label{display:block;padding:0.7rem 1.2rem 0.35rem;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--verde);opacity:0.55;background:var(--crema-oscuro);}
+.nav-dropdown-label:first-child{padding-top:0.6rem;}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:0.75rem 1.2rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--negro);border-bottom:1px solid rgba(61,74,46,0.06);transition:all 0.15s;}
 .nav-dropdown-menu a:last-child{border-bottom:none;}
@@ -149,9 +151,15 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
     <div class="nav-dropdown">
       <button class="nav-dropdown-btn">Catálogo Mesadas <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
       <div class="nav-dropdown-menu">
+        <p class="nav-dropdown-label">Superficies de Ingeniería</p>
         <a href="materiales/purastone.html">Purastone</a>
         <a href="materiales/purastone-prima.html">Purastone Prima</a>
         <a href="materiales/neolith.html">Neolith</a>
+        <p class="nav-dropdown-label">Piedras Naturales</p>
+        <a href="materiales/marmoles.html">Mármoles</a>
+        <a href="materiales/travertinos.html">Travertinos</a>
+        <a href="materiales/cuarcitas-exoticas.html">Cuarcitas Exóticas</a>
+        <a href="materiales/granitos.html">Granitos</a>
       </div>
     </div>
     <a href="obras.html">Obras</a>
@@ -232,12 +240,21 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
           </div>
         </div>
         <div style="background:var(--crema-oscuro);padding:0.55rem 1rem;margin-bottom:0;">
-          <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Elegí tu material</p>
+          <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Superficies de Ingeniería</p>
         </div>
         <div class="marm-btns">
           <a href="materiales/purastone.html" class="btn-material">Purastone</a>
           <a href="materiales/purastone-prima.html" class="btn-material">Purastone Prima</a>
           <a href="materiales/neolith.html" class="btn-material">Neolith</a>
+        </div>
+        <div style="background:var(--crema-oscuro);padding:0.55rem 1rem;margin-bottom:0;margin-top:1.4rem;">
+          <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Piedras Naturales</p>
+        </div>
+        <div class="marm-btns">
+          <a href="materiales/marmoles.html" class="btn-material">Mármoles</a>
+          <a href="materiales/travertinos.html" class="btn-material">Travertinos</a>
+          <a href="materiales/cuarcitas-exoticas.html" class="btn-material">Cuarcitas Exóticas</a>
+          <a href="materiales/granitos.html" class="btn-material">Granitos</a>
         </div>
       </div>
     </div>
