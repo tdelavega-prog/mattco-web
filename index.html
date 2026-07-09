@@ -74,10 +74,13 @@ section{padding:6rem 3rem;}
 
 /* MARMOLERÍA */
 #marmoleria{background:var(--crema);}
-.marm-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4rem;row-gap:1.5rem;margin-top:3.5rem;}
-.marm-image{position:relative;height:100%;min-height:220px;overflow:hidden;border-radius:2px;}
+.marm-row-top{display:grid;grid-template-columns:1fr 1fr;column-gap:4rem;align-items:center;margin-top:3.5rem;}
+.marm-row-bottom{display:grid;grid-template-columns:1fr 1fr;column-gap:4rem;align-items:center;margin-top:1.8rem;}
+.marm-image{position:relative;height:340px;overflow:hidden;border-radius:2px;}
+.marm-image.marm-image-secondary{height:230px;}
 .marm-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
 .marm-image:hover img{transform:scale(1.03);}
+.marm-btns-wrap{display:flex;flex-direction:column;gap:1.4rem;}
 .marm-features{display:flex;flex-direction:column;gap:0;margin:2rem 0 2.5rem;}
 .marm-feature{display:flex;gap:1.2rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid rgba(61,74,46,0.1);}
 .marm-feature:first-child{padding-top:0;}
@@ -129,9 +132,11 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   .nav-links{display:none;}
   section{padding:4rem 1.5rem;}
   #inicio{padding:0 1.5rem 3.5rem;}
-  .marm-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .marm-row-top{grid-template-columns:1fr;gap:1.5rem;}
+  .marm-row-bottom{grid-template-columns:1fr;gap:1.5rem;margin-top:2.5rem;}
   .marm-image{height:280px;}
-  .marm-image.marm-image-secondary{height:200px;}
+  .marm-image.marm-image-secondary{height:220px;}
+  .marm-btns-wrap{gap:2rem;}
   #contacto{grid-template-columns:1fr;}
   .contacto-img{min-height:240px;}
   .contacto-content{padding:3rem 1.5rem;}
@@ -210,11 +215,11 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 <section id="marmoleria">
   <div style="max-width:1200px;margin:0 auto;">
     <p class="section-label">01 — Mesadas</p>
-    <div class="marm-grid">
+    <div class="marm-row-top">
       <div class="marm-image">
         <img src="images/marmoleria.jpg" alt="Marmolería Mattco">
       </div>
-      <div class="marm-text-top">
+      <div>
         <h2 class="section-title">Piedra natural y superficies de ingeniería</h2>
         <p class="section-sub">Trabajamos con las mejores materias primas del mercado, con el respaldo y trayectoria de más de 100 años de De Stefano 1913.</p>
         <div class="marm-features">
@@ -240,27 +245,33 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
             </div>
           </div>
         </div>
-        <div style="background:var(--crema-oscuro);padding:0.55rem 1rem;margin-bottom:0;">
-          <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Superficies de Ingeniería</p>
-        </div>
-        <div class="marm-btns">
-          <a href="materiales/purastone.html" class="btn-material">Purastone</a>
-          <a href="materiales/purastone-prima.html" class="btn-material">Purastone Prima</a>
-          <a href="materiales/neolith.html" class="btn-material">Neolith</a>
-        </div>
       </div>
+    </div>
+    <div class="marm-row-bottom">
       <div class="marm-image marm-image-secondary">
         <img src="images/piedra-natural.jpg" alt="Piedra natural Mattco">
       </div>
-      <div class="marm-text-bottom">
-        <div style="background:var(--crema-oscuro);padding:0.55rem 1rem;margin-bottom:0;">
-          <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Piedras Naturales</p>
+      <div class="marm-btns-wrap">
+        <div>
+          <div style="background:var(--crema-oscuro);padding:0.55rem 1rem;margin-bottom:0;">
+            <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Superficies de Ingeniería</p>
+          </div>
+          <div class="marm-btns">
+            <a href="materiales/purastone.html" class="btn-material">Purastone</a>
+            <a href="materiales/purastone-prima.html" class="btn-material">Purastone Prima</a>
+            <a href="materiales/neolith.html" class="btn-material">Neolith</a>
+          </div>
         </div>
-        <div class="marm-btns">
-          <a href="materiales/marmoles.html" class="btn-material">Mármoles</a>
-          <a href="materiales/travertinos.html" class="btn-material">Travertinos</a>
-          <a href="materiales/cuarcitas-exoticas.html" class="btn-material">Cuarcitas Exóticas</a>
-          <a href="materiales/granitos.html" class="btn-material">Granitos</a>
+        <div>
+          <div style="background:var(--crema-oscuro);padding:0.55rem 1rem;margin-bottom:0;">
+            <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gris);">Piedras Naturales</p>
+          </div>
+          <div class="marm-btns">
+            <a href="materiales/marmoles.html" class="btn-material">Mármoles</a>
+            <a href="materiales/travertinos.html" class="btn-material">Travertinos</a>
+            <a href="materiales/cuarcitas-exoticas.html" class="btn-material">Cuarcitas Exóticas</a>
+            <a href="materiales/granitos.html" class="btn-material">Granitos</a>
+          </div>
         </div>
       </div>
     </div>
