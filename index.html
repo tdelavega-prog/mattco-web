@@ -21,7 +21,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links{display:flex;gap:2.5rem;align-items:center;}
 .nav-links a{text-decoration:none;color:var(--negro);font-size:0.78rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover{color:var(--verde);}
-.nav-cta{background:var(--verde)!important;color:var(--blanco)!important;padding:0.55rem 1.4rem;border-radius:2px;font-size:0.75rem!important;letter-spacing:0.1em!important;}
+.nav-cta{background:var(--verde)!important;color:var(--blanco)!important;padding:0.55rem 1.4rem;border-radius:2px;font-size:0.75rem!important;letter-spacing:0.1em!important;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;text-transform:uppercase;}
 .nav-cta:hover{background:var(--verde-claro)!important;}
 .nav-dropdown{position:relative;}
 .nav-dropdown-btn{display:flex;align-items:center;gap:0.35rem;color:var(--negro);font-size:0.78rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;cursor:default;background:none;border:none;padding:0;font-family:'DM Sans',sans-serif;}
@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-whatwedo{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,244,240,0.9);margin-bottom:0.6rem;font-weight:500;}
 .hero-sub{font-size:0.82rem;color:rgba(245,244,240,0.6);line-height:1.8;max-width:480px;margin:0 auto 2rem;}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
-.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--crema);color:var(--negro);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--crema);color:var(--negro);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .btn-primary:hover{background:white;}
 .btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(245,244,240,0.35);color:var(--crema);text-decoration:none;padding:0.85rem 2rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;}
 .btn-secondary:hover{border-color:rgba(245,244,240,0.75);}
@@ -98,7 +98,7 @@ section{padding:6rem 3rem;}
 /* OTROS MATERIALES */
 #otros{background:var(--crema-oscuro);padding:4rem 3rem;}
 .rubros-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(61,74,46,0.12);margin-top:2.5rem;}
-.rubro-btn{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;background:var(--crema-oscuro);text-decoration:none;color:var(--negro);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.2s;}
+.rubro-btn{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;background:var(--crema-oscuro);text-decoration:none;color:var(--negro);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.2s;min-width:0;}
 .rubro-btn:hover{background:var(--verde);color:var(--crema);}
 .rubro-btn::after{content:'→';opacity:0.35;font-size:0.85rem;}
 
@@ -112,8 +112,37 @@ section{padding:6rem 3rem;}
 .contacto-nombre{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:0.4rem;}
 .contacto-dato{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--gris);line-height:1.9;text-decoration:none;transition:color 0.2s;}
 .contacto-dato:hover{color:var(--verde);}
-.btn-verde{display:inline-flex;align-items:center;gap:0.6rem;background:var(--verde);color:var(--crema);text-decoration:none;padding:0.9rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;}
+.btn-verde{display:inline-flex;align-items:center;gap:0.6rem;background:var(--verde);color:var(--crema);text-decoration:none;padding:0.9rem 2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .btn-verde:hover{background:var(--verde-claro);}
+
+/* MODAL COTIZACIÓN */
+.modal-overlay{position:fixed;inset:0;background:rgba(26,26,24,0.55);z-index:500;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:opacity 0.25s ease;}
+.modal-overlay.open{opacity:1;visibility:visible;}
+.modal-box{background:var(--blanco);max-width:460px;width:100%;max-height:90vh;overflow-y:auto;padding:2.5rem;border-radius:2px;position:relative;transform:translateY(12px);transition:transform 0.25s ease;}
+.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-close{position:absolute;top:1.1rem;right:1.1rem;background:none;border:none;font-size:1.6rem;line-height:1;color:var(--gris);cursor:pointer;padding:0.3rem;}
+.modal-close:hover{color:var(--negro);}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--negro);margin-bottom:0.5rem;}
+.modal-sub{font-size:0.82rem;color:var(--gris);line-height:1.6;margin-bottom:1.6rem;}
+.btn-whatsapp-direct{display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#25D366;color:white;text-decoration:none;padding:0.85rem 1.5rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;}
+.btn-whatsapp-direct:hover{background:#1ebe5b;}
+.btn-whatsapp-direct svg{width:18px;height:18px;fill:white;flex-shrink:0;}
+.modal-divider{display:flex;align-items:center;gap:0.8rem;margin:1.6rem 0;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gris);}
+.modal-divider::before,.modal-divider::after{content:'';flex:1;height:1px;background:rgba(61,74,46,0.15);}
+#quote-form{display:flex;flex-direction:column;gap:0.9rem;}
+#quote-form input[type=text],#quote-form input[type=tel],#quote-form input[type=email],#quote-form select{width:100%;padding:0.75rem 0.9rem;border:1px solid rgba(61,74,46,0.2);border-radius:2px;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--negro);background:var(--blanco);}
+#quote-form select{color:var(--negro);}
+#quote-form select:invalid{color:var(--gris);}
+#quote-form input:focus,#quote-form select:focus{outline:none;border-color:var(--verde);}
+.checkbox-row{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.78rem;color:var(--gris);line-height:1.5;cursor:pointer;}
+.checkbox-row input{margin-top:0.2rem;flex-shrink:0;}
+.quote-submit{width:100%;justify-content:center;margin-top:0.4rem;}
+.quote-form-msg{font-size:0.78rem;color:var(--verde);margin-top:0.8rem;display:none;}
+.quote-form-msg.show{display:block;}
+@media(max-width:500px){
+  .modal-box{padding:1.8rem;}
+  .modal-title{font-size:1.4rem;}
+}
 
 footer{background:var(--negro);color:rgba(245,244,240,0.25);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:0.2em;color:rgba(245,244,240,0.5);}
@@ -144,6 +173,7 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 }
 @media(max-width:600px){
   .hero-title{font-size:2.2rem;}
+  .rubros-btns{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -169,7 +199,7 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
     <a href="obras.html">Obras</a>
     <a href="#otros">Materiales</a>
     <a href="#contacto">Contacto</a>
-    <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" class="nav-cta">Solicitar cotización</a>
+    <button type="button" class="nav-cta" onclick="openQuoteModal()">Solicitar cotización</button>
   </div>
 </nav>
 
@@ -182,7 +212,7 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
     <div class="hero-rule"></div>
     <p class="hero-whatwedo">Mesadas &nbsp;·&nbsp; Pisos &nbsp;·&nbsp; Revestimientos &nbsp;·&nbsp; Terminaciones</p>
     <div class="hero-actions">
-      <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" class="btn-primary">Solicitar cotización</a>
+      <button type="button" class="btn-primary" onclick="openQuoteModal()">Solicitar cotización</button>
       <a href="obras.html" class="btn-secondary">Ver obras realizadas</a>
     </div>
   </div>
@@ -292,7 +322,7 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
       <a href="#" class="rubro-btn"><img src="assets/icons/mattco-puerta.svg" alt="" class="rubro-icon">Aberturas y ventanas</a>
     </div>
     <div style="text-align:center;margin-top:2.5rem;">
-      <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20cotizar%20materiales%20para%20mi%20obra" class="btn-verde">Consultar por WhatsApp</a>
+      <a href="https://wa.me/5491178250837?text=Hola,%20quiero%20cotizar%20materiales%20para%20mi%20obra" onclick="trackWhatsAppClick(event, this.href)" class="btn-verde">Consultar por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -318,10 +348,10 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
         <a href="mailto:tcubelli@mattco.com.ar" class="contacto-dato">tcubelli@mattco.com.ar</a>
       </div>
     </div>
-    <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20mi%20obra" class="btn-verde">
+    <button type="button" class="btn-verde" onclick="openQuoteModal()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Solicitar cotización
-    </a>
+    </button>
     <p style="font-size:0.75rem;color:var(--gris);margin-top:2rem;line-height:1.8;">
       Av. Jose Ingenieros 3241, Beccar<br>
       Buenos Aires, Argentina<br><br>
@@ -343,9 +373,130 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
   </div>
 </footer>
 
-<a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" class="wa-float" aria-label="WhatsApp">
+<a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" onclick="trackWhatsAppClick(event, this.href)" class="wa-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<div id="quote-modal" class="modal-overlay" onclick="if(event.target===this)closeQuoteModal()">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+    <button type="button" class="modal-close" onclick="closeQuoteModal()" aria-label="Cerrar">&times;</button>
+    <h3 id="quote-modal-title" class="modal-title">Solicitá tu cotización</h3>
+    <p class="modal-sub">Completá tus datos o escribinos directo por WhatsApp — como prefieras.</p>
+
+    <a href="https://wa.me/5491178250837?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n" onclick="trackWhatsAppClick(event, this.href)" class="btn-whatsapp-direct">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chatear con nosotros
+    </a>
+
+    <div class="modal-divider"><span>o completá tus datos</span></div>
+
+    <form name="cotizacion" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="quote-form">
+      <input type="hidden" name="form-name" value="cotizacion">
+      <p style="position:absolute;left:-9999px;" aria-hidden="true">
+        <label>No completar: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <input type="text" name="nombre" placeholder="Nombre y apellido *" required>
+      <input type="tel" name="telefono" placeholder="Teléfono *" required>
+      <input type="email" name="email" placeholder="Email *" required>
+
+      <select name="tipo_proyecto" required>
+        <option value="" disabled selected>Tipo de proyecto *</option>
+        <option value="Mesada">Mesada</option>
+        <option value="Pisos">Pisos</option>
+        <option value="Revestimientos">Revestimientos</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <select name="material" required>
+        <option value="" disabled selected>Material de interés *</option>
+        <option value="Purastone">Purastone</option>
+        <option value="Neolith">Neolith</option>
+        <option value="Mármoles">Mármoles</option>
+        <option value="Travertinos">Travertinos</option>
+        <option value="Cuarcitas">Cuarcitas</option>
+        <option value="Granitos">Granitos</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <select name="m2" required>
+        <option value="" disabled selected>M² aproximados *</option>
+        <option value="Menos de 5 m²">Menos de 5 m²</option>
+        <option value="5 a 15 m²">5 a 15 m²</option>
+        <option value="15 a 30 m²">15 a 30 m²</option>
+        <option value="Más de 30 m²">Más de 30 m²</option>
+        <option value="No sé todavía">No sé todavía</option>
+      </select>
+
+      <select name="zona" required>
+        <option value="" disabled selected>Zona *</option>
+        <option value="Zona Norte">Zona Norte</option>
+        <option value="CABA">CABA</option>
+        <option value="GBA">GBA</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <label class="checkbox-row">
+        <input type="checkbox" name="griferia_sanitarios" value="Sí">
+        ¿También necesitás grifería, sanitarios o climatización para este proyecto?
+      </label>
+
+      <button type="submit" class="btn-verde quote-submit" id="quote-submit-btn">Enviar y continuar por WhatsApp</button>
+      <p class="quote-form-msg" id="quote-form-msg">Enviando...</p>
+    </form>
+  </div>
+</div>
+
+<script src="assets/js/ads-conversion.js"></script>
+<script>
+function openQuoteModal(){
+  document.getElementById('quote-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeQuoteModal(){
+  document.getElementById('quote-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeQuoteModal();
+});
+
+document.getElementById('quote-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  var submitBtn = document.getElementById('quote-submit-btn');
+  var msgEl = document.getElementById('quote-form-msg');
+
+  submitBtn.disabled = true;
+  msgEl.textContent = 'Enviando...';
+  msgEl.classList.add('show');
+
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  }).then(function(){
+    fireGoogleAdsConversion(function(){
+      var msg = 'Hola! Quiero solicitar una cotización.\n\n'
+        + 'Nombre: ' + data.get('nombre') + '\n'
+        + 'Teléfono: ' + data.get('telefono') + '\n'
+        + 'Email: ' + data.get('email') + '\n'
+        + 'Tipo de proyecto: ' + data.get('tipo_proyecto') + '\n'
+        + 'Material de interés: ' + data.get('material') + '\n'
+        + 'M²: ' + data.get('m2') + '\n'
+        + 'Zona: ' + data.get('zona')
+        + (data.get('griferia_sanitarios') ? '\nTambién necesita grifería, sanitarios o climatización' : '');
+
+      window.location.href = 'https://wa.me/5491178250837?text=' + encodeURIComponent(msg);
+    });
+  }).catch(function(err){
+    submitBtn.disabled = false;
+    msgEl.textContent = 'Hubo un error al enviar. Por favor escribinos directo por WhatsApp con el botón de arriba.';
+    console.error(err);
+  });
+});
+</script>
 
 </body>
 </html>
