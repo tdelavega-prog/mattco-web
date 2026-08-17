@@ -49,6 +49,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .color-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .color-placeholder span{font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(61,74,46,0.22);}
 .color-info{padding:0.6rem 0.2rem 0.8rem;}
+.catalog-search{position:relative;max-width:340px;margin:0 auto 2.4rem;}
+.catalog-search svg{position:absolute;left:0.95rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--gris);pointer-events:none;}
+.catalog-search input{width:100%;padding:0.7rem 1rem 0.7rem 2.5rem;border:1px solid rgba(61,74,46,0.18);border-radius:20px;font-family:'DM Sans',sans-serif;font-size:0.82rem;color:var(--negro);background:var(--blanco);outline:none;transition:border-color 0.2s;}
+.catalog-search input:focus{border-color:var(--verde);}
+.catalog-search input::placeholder{color:var(--gris);}
+.catalog-no-results{display:none;text-align:center;padding:2.5rem 1rem;font-size:0.86rem;color:var(--gris);}
 .color-nombre{font-family:'Cormorant Garamond',serif;font-size:0.92rem;font-weight:300;color:var(--negro);line-height:1.3;}
 .catalog-empty{text-align:center;padding:3rem 1rem;}
 .catalog-empty h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--negro);margin-bottom:0.8rem;}
@@ -117,12 +123,17 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
 </div>
 
 <div class="catalog-wrap">
+  <div class="catalog-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input type="text" id="catalog-search-input" placeholder="Buscar por nombre..." autocomplete="off">
+  </div>
   <div class="colors-grid" id="colors-grid">
 
     <div class="color-card" data-nombre="Adamantium"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Adamantium</p></div></div>
     <div class="color-card" data-nombre="Allure"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Allure</p></div></div>
     <div class="color-card" data-nombre="Amazonite"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Amazonite</p></div></div>
     <div class="color-card" data-nombre="Aurora Borealis"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Aurora Borealis</p></div></div>
+    <div class="color-card" data-nombre="Avalon"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Avalon</p></div></div>
     <div class="color-card" data-nombre="Avocatus"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Avocatus</p></div></div>
     <div class="color-card" data-nombre="Black Salinas"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Black Salinas</p></div></div>
     <div class="color-card" data-nombre="Black Taurus"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Black Taurus</p></div></div>
@@ -134,6 +145,7 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
     <div class="color-card" data-nombre="Da Vinci"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Da Vinci</p></div></div>
     <div class="color-card" data-nombre="Donatello"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Donatello</p></div></div>
     <div class="color-card" data-nombre="Emerald Green"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Emerald Green</p></div></div>
+    <div class="color-card" data-nombre="Fendi Green"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Fendi Green</p></div></div>
     <div class="color-card" data-nombre="Fusion"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Fusion</p></div></div>
     <div class="color-card" data-nombre="Galapagos"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Galapagos</p></div></div>
     <div class="color-card" data-nombre="Iceland"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Iceland</p></div></div>
@@ -142,20 +154,28 @@ footer p{font-size:0.72rem;letter-spacing:0.04em;}
     <div class="color-card" data-nombre="Magma Iron Red"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Magma Iron Red</p></div></div>
     <div class="color-card" data-nombre="Maori"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Maori</p></div></div>
     <div class="color-card" data-nombre="Matarazzo"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Matarazzo</p></div></div>
+    <div class="color-card" data-nombre="Monalisa"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Monalisa</p></div></div>
     <div class="color-card" data-nombre="Mont Blanc"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Mont Blanc</p></div></div>
+    <div class="color-card" data-nombre="Nácar White"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Nácar White</p></div></div>
     <div class="color-card" data-nombre="Negresco"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Negresco</p></div></div>
     <div class="color-card" data-nombre="Ocean Blue"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Ocean Blue</p></div></div>
     <div class="color-card" data-nombre="Patagonia Golden"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Patagonia Golden</p></div></div>
+    <div class="color-card" data-nombre="Patagonia Pink"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Patagonia Pink</p></div></div>
     <div class="color-card" data-nombre="Patagonia Wow"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Patagonia Wow</p></div></div>
     <div class="color-card" data-nombre="Silver White"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Silver White</p></div></div>
     <div class="color-card" data-nombre="Spring Falls"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Spring Falls</p></div></div>
     <div class="color-card" data-nombre="Taj Mahal"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Taj Mahal</p></div></div>
     <div class="color-card" data-nombre="Tan Taj"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Tan Taj</p></div></div>
+    <div class="color-card" data-nombre="Terracota"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Terracota</p></div></div>
     <div class="color-card" data-nombre="Verde Gaya"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Verde Gaya</p></div></div>
+    <div class="color-card" data-nombre="Verde Mist"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Verde Mist</p></div></div>
+    <div class="color-card" data-nombre="Verde Xingu"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Verde Xingu</p></div></div>
     <div class="color-card" data-nombre="Yellow Bamboo"><div class="color-img"><div class="color-placeholder"><span>próximamente</span></div></div><div class="color-info"><p class="color-nombre">Yellow Bamboo</p></div></div>
 
   </div>
 </div>
+
+<p class="catalog-no-results" id="catalog-no-results">No se encontraron materiales que coincidan con tu búsqueda.</p>
 
 <div class="page-cta">
   <h2>¿Te interesa algún color?</h2>
@@ -214,6 +234,22 @@ document.querySelectorAll('.color-card').forEach(function(card) {
   };
   imgTex.src = base + slug + '.jpg';
 });
+
+var catalogSearchInput = document.getElementById('catalog-search-input');
+var catalogNoResults = document.getElementById('catalog-no-results');
+if (catalogSearchInput) {
+  catalogSearchInput.addEventListener('input', function() {
+    var q = toSlug(catalogSearchInput.value.trim());
+    var visibleCount = 0;
+    document.querySelectorAll('.color-card').forEach(function(card) {
+      var nombre = toSlug(card.getAttribute('data-nombre'));
+      var match = q === '' || nombre.indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    if (catalogNoResults) catalogNoResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  });
+}
 </script>
 <script src="../assets/js/ads-conversion.js"></script>
 </body>
